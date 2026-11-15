@@ -1,0 +1,11 @@
+*.class
+*.jar
+__pycache__/
+
+# decompiled trees and extracted plugin assets stay local
+work/**/src/
+work/**/src_obf/
+work/**/contents/
+work/**/lang/
+work/**/internal/
+work/**/META-INF/
