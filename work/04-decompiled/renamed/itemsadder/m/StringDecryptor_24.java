@@ -1,0 +1,115 @@
+package itemsadder.m;
+
+import itemsadder.m.PluginBridge_8;
+
+class StringDecryptor_24 {
+    int bK;
+
+    StringDecryptor_24(PluginBridge_8 pluginBridge_8) {
+    }
+
+    public String toString() {
+        byte[] byArray = new byte[50];
+        this.bK = -838753988;
+        byArray[0] = (byte)(this.bK >>> 10);
+        this.bK = -1167608519;
+        byArray[1] = (byte)(this.bK >>> 23);
+        this.bK = 1948099548;
+        byArray[2] = (byte)(this.bK >>> 24);
+        this.bK = 1223404992;
+        byArray[3] = (byte)(this.bK >>> 2);
+        this.bK = 1489707942;
+        byArray[4] = (byte)(this.bK >>> 4);
+        this.bK = 1422077930;
+        byArray[5] = (byte)(this.bK >>> 8);
+        this.bK = -280237700;
+        byArray[6] = (byte)(this.bK >>> 14);
+        this.bK = 255298489;
+        byArray[7] = (byte)(this.bK >>> 3);
+        this.bK = 317614401;
+        byArray[8] = (byte)(this.bK >>> 17);
+        this.bK = 1404794835;
+        byArray[9] = (byte)(this.bK >>> 8);
+        this.bK = 170800907;
+        byArray[10] = (byte)(this.bK >>> 16);
+        this.bK = -578368088;
+        byArray[11] = (byte)(this.bK >>> 5);
+        this.bK = -1987419690;
+        byArray[12] = (byte)(this.bK >>> 8);
+        this.bK = 1463925312;
+        byArray[13] = (byte)(this.bK >>> 20);
+        this.bK = 312294139;
+        byArray[14] = (byte)(this.bK >>> 14);
+        this.bK = 111978383;
+        byArray[15] = (byte)(this.bK >>> 13);
+        this.bK = 499029664;
+        byArray[16] = (byte)(this.bK >>> 18);
+        this.bK = -711855092;
+        byArray[17] = (byte)(this.bK >>> 18);
+        this.bK = 1696842610;
+        byArray[18] = (byte)(this.bK >>> 24);
+        this.bK = 1218931140;
+        byArray[19] = (byte)(this.bK >>> 12);
+        this.bK = -1761499503;
+        byArray[20] = (byte)(this.bK >>> 23);
+        this.bK = -214526166;
+        byArray[21] = (byte)(this.bK >>> 12);
+        this.bK = 1581490380;
+        byArray[22] = (byte)(this.bK >>> 11);
+        this.bK = 830059635;
+        byArray[23] = (byte)(this.bK >>> 19);
+        this.bK = 241808910;
+        byArray[24] = (byte)(this.bK >>> 21);
+        this.bK = -708691424;
+        byArray[25] = (byte)(this.bK >>> 18);
+        this.bK = 1025352727;
+        byArray[26] = (byte)(this.bK >>> 10);
+        this.bK = 1509858523;
+        byArray[27] = (byte)(this.bK >>> 22);
+        this.bK = 1878698094;
+        byArray[28] = (byte)(this.bK >>> 24);
+        this.bK = 382190503;
+        byArray[29] = (byte)(this.bK >>> 3);
+        this.bK = 2081916405;
+        byArray[30] = (byte)(this.bK >>> 5);
+        this.bK = -1932340590;
+        byArray[31] = (byte)(this.bK >>> 9);
+        this.bK = -1676029058;
+        byArray[32] = (byte)(this.bK >>> 10);
+        this.bK = 12997516;
+        byArray[33] = (byte)(this.bK >>> 12);
+        this.bK = -1800556738;
+        byArray[34] = (byte)(this.bK >>> 13);
+        this.bK = -1171357699;
+        byArray[35] = (byte)(this.bK >>> 13);
+        this.bK = 102600192;
+        byArray[36] = (byte)(this.bK >>> 20);
+        this.bK = 423558258;
+        byArray[37] = (byte)(this.bK >>> 22);
+        this.bK = -1399126213;
+        byArray[38] = (byte)(this.bK >>> 21);
+        this.bK = -681891031;
+        byArray[39] = (byte)(this.bK >>> 3);
+        this.bK = 1211200407;
+        byArray[40] = (byte)(this.bK >>> 3);
+        this.bK = -1211959538;
+        byArray[41] = (byte)(this.bK >>> 12);
+        this.bK = 299212396;
+        byArray[42] = (byte)(this.bK >>> 18);
+        this.bK = 875641397;
+        byArray[43] = (byte)(this.bK >>> 7);
+        this.bK = 1004750876;
+        byArray[44] = (byte)(this.bK >>> 11);
+        this.bK = -1651374670;
+        byArray[45] = (byte)(this.bK >>> 2);
+        this.bK = -2098886941;
+        byArray[46] = (byte)(this.bK >>> 20);
+        this.bK = -105325259;
+        byArray[47] = (byte)(this.bK >>> 6);
+        this.bK = 113013885;
+        byArray[48] = (byte)(this.bK >>> 15);
+        this.bK = 1710504482;
+        byArray[49] = (byte)(this.bK >>> 7);
+        return new String(byArray);
+    }
+}

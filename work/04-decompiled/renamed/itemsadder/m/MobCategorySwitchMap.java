@@ -1,0 +1,53 @@
+package itemsadder.m;
+
+import net.minecraft.world.entity.MobCategory;
+
+class MobCategorySwitchMap {
+    static final /* synthetic */ int[] abI;
+
+    static {
+        abI = new int[MobCategory.values().length];
+        try {
+            MobCategorySwitchMap.abI[MobCategory.MONSTER.ordinal()] = 1;
+        }
+        catch (NoSuchFieldError noSuchFieldError) {
+            // empty catch block
+        }
+        try {
+            MobCategorySwitchMap.abI[MobCategory.CREATURE.ordinal()] = 2;
+        }
+        catch (NoSuchFieldError noSuchFieldError) {
+            // empty catch block
+        }
+        try {
+            MobCategorySwitchMap.abI[MobCategory.AMBIENT.ordinal()] = 3;
+        }
+        catch (NoSuchFieldError noSuchFieldError) {
+            // empty catch block
+        }
+        try {
+            MobCategorySwitchMap.abI[MobCategory.AXOLOTLS.ordinal()] = 4;
+        }
+        catch (NoSuchFieldError noSuchFieldError) {
+            // empty catch block
+        }
+        try {
+            MobCategorySwitchMap.abI[MobCategory.UNDERGROUND_WATER_CREATURE.ordinal()] = 5;
+        }
+        catch (NoSuchFieldError noSuchFieldError) {
+            // empty catch block
+        }
+        try {
+            MobCategorySwitchMap.abI[MobCategory.WATER_CREATURE.ordinal()] = 6;
+        }
+        catch (NoSuchFieldError noSuchFieldError) {
+            // empty catch block
+        }
+        try {
+            MobCategorySwitchMap.abI[MobCategory.WATER_AMBIENT.ordinal()] = 7;
+        }
+        catch (NoSuchFieldError noSuchFieldError) {
+            // empty catch block
+        }
+    }
+}

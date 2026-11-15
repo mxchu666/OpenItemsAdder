@@ -1,0 +1,53 @@
+package itemsadder.m;
+
+import org.bukkit.Material;
+
+class lt {
+    static final /* synthetic */ int[] AI;
+
+    static {
+        AI = new int[Material.values().length];
+        try {
+            lt.AI[Material.NOTE_BLOCK.ordinal()] = 1;
+        }
+        catch (NoSuchFieldError noSuchFieldError) {
+            // empty catch block
+        }
+        try {
+            lt.AI[Material.MUSHROOM_STEM.ordinal()] = 2;
+        }
+        catch (NoSuchFieldError noSuchFieldError) {
+            // empty catch block
+        }
+        try {
+            lt.AI[Material.BROWN_MUSHROOM_BLOCK.ordinal()] = 3;
+        }
+        catch (NoSuchFieldError noSuchFieldError) {
+            // empty catch block
+        }
+        try {
+            lt.AI[Material.RED_MUSHROOM_BLOCK.ordinal()] = 4;
+        }
+        catch (NoSuchFieldError noSuchFieldError) {
+            // empty catch block
+        }
+        try {
+            lt.AI[Material.CHORUS_PLANT.ordinal()] = 5;
+        }
+        catch (NoSuchFieldError noSuchFieldError) {
+            // empty catch block
+        }
+        try {
+            lt.AI[Material.FIRE.ordinal()] = 6;
+        }
+        catch (NoSuchFieldError noSuchFieldError) {
+            // empty catch block
+        }
+        try {
+            lt.AI[Material.TRIPWIRE.ordinal()] = 7;
+        }
+        catch (NoSuchFieldError noSuchFieldError) {
+            // empty catch block
+        }
+    }
+}

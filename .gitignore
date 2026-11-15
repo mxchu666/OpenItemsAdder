@@ -1,11 +1,8 @@
 *.class
 *.jar
+!work/04-decompiled/ItemsAdder_4.0.18.deobf.jar
 __pycache__/
 
-# decompiled trees and extracted plugin assets stay local
+# the original paid JAR and the extracted pack/config assets stay local
 work/**/src/
 work/**/src_obf/
-work/**/contents/
-work/**/lang/
-work/**/internal/
-work/**/META-INF/

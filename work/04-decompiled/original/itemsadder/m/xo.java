@@ -1,0 +1,74 @@
+package itemsadder.m;
+
+import dev.lone.itemsadder.Main;
+import dev.lone.itemsadder.s;
+import itemsadder.m.bce;
+import itemsadder.m.co;
+import itemsadder.m.d;
+import itemsadder.m.xp;
+import itemsadder.m.za;
+import java.util.Map;
+import java.util.WeakHashMap;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.permissions.Permissible;
+import org.jetbrains.annotations.NotNull;
+
+public class xo
+extends za {
+    public static Map Sv = new WeakHashMap();
+
+    public xo() {
+        Main.cM("crops").setExecutor((CommandExecutor)this);
+    }
+
+    @Override
+    public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String string, @NotNull String[] stringArray) {
+        if (!this.a(commandSender, command)) {
+            return true;
+        }
+        if (stringArray.length == 0 || stringArray.length > 3) {
+            bce.f(commandSender, Main.PQ.ir("wrong-command-usage") + String.valueOf(ChatColor.YELLOW) + " /crops <enable|disable> [player]. Example: /crops enable LoneDev");
+            return true;
+        }
+        boolean bl = stringArray[0].equalsIgnoreCase("enable");
+        boolean bl2 = s.c((Permissible)commandSender, "ia.admin.crops.others");
+        if (bl && !bl2 && System.currentTimeMillis() - Sv.getOrDefault(commandSender, 0L) < 10000L) {
+            bce.g(commandSender, "please-wait-command-cooldown");
+            return true;
+        }
+        Player player = null;
+        if (stringArray.length == 1) {
+            if (!(commandSender instanceof Player)) {
+                return xp.a(commandSender);
+            }
+            player = (Player)commandSender;
+        } else if (stringArray.length == 2) {
+            if (!bl2) {
+                return true;
+            }
+            player = Bukkit.getPlayer((String)stringArray[1]);
+            if (player == null) {
+                bce.g(commandSender, "player-offline");
+                return true;
+            }
+        }
+        assert (player != null);
+        if (bl) {
+            d.g().v().kO.C(player);
+            co.d(player, false);
+            bce.f(commandSender, Main.PQ.ir("crops-view-enabled"));
+        } else {
+            d.g().v().kO.D(player);
+            co.d(player, true);
+            d.g().v().kQ.H(player);
+            bce.f(commandSender, Main.PQ.ir("crops-view-disabled"));
+        }
+        Sv.put(player, System.currentTimeMillis());
+        return true;
+    }
+}
