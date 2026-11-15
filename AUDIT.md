@@ -114,4 +114,4 @@ python tools/scan_jar.py <path-to-jar>
 
 The scanner walks every class, extracts string constants and method references, and flags webhooks, credential paths, wallet paths, process execution, class definition, and socket use. Output is grouped by category.
 
-Raw decompilation was produced with Recaf (CFR/Vineflower) for local reading. No decompiled third-party code is redistributed in this repository.
+Raw decompilation was produced with Recaf (CFR/Vineflower). The full source tree, renamed and original, is committed under `work/04-decompiled/` — it is LoneDev's code, copied for analysis, and the original licence still governs reuse.

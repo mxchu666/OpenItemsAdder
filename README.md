@@ -4,7 +4,7 @@ Static security audit, decompilation and deobfuscation notes for **ItemsAdder 4.
 
 [English](#english) · [Español](#español)
 
-> ItemsAdder is paid, closed-source software by LoneDev. This repository contains **original tooling and documentation only** — no plugin code, no modified JAR, no license bypass. It documents what was done to one licensed copy and how.
+> ItemsAdder is paid, closed-source software by LoneDev. This repository holds the tooling, the write-up, and the **full decompiled output**: 1,946 classes renamed and original, the remapped JAR, the rename map and a per-class catalogue. No license bypass. The original licence still governs reuse of the plugin code itself.
 
 ---
 
@@ -15,6 +15,17 @@ Static security audit, decompilation and deobfuscation notes for **ItemsAdder 4.
 A write-up of a full static analysis pass over `ItemsAdder_4.0.18.jar` (4.7 MB, 2,197 entries, 1,946 classes): what the plugin contacts on the network, whether anything malicious is present, how the obfuscation works, and how 1,674 unnamed classes were recovered into readable ones.
 
 Everything here is reproducible with the tools in `tools/`. Raw output by stage — scan, mapping, hints, counters — is in [`work/`](work/).
+
+```
+CLASSES.md            all 1,674 classes, one row each: new name, old name, what it does
+AUDIT.md              what the plugin contacts, what was checked, what was found
+DEOBFUSCATION.md      how the rename works, rule by rule
+tools/                scanner, renamer, fact extractor, validator, catalogue renderer
+work/01-inventory/    bytecode surface that touches the outside world
+work/02-audit/        static scan results
+work/03-deobfuscation/mapping, evidence, NMS hints, per-class facts
+work/04-decompiled/   1,946 classes renamed and original, plus the remapped JAR
+```
 
 ### 1. Inventory
 
@@ -105,25 +116,30 @@ Bytecode verification reports 1,081 warnings — **exactly the same count as the
 
 ### 6. What is not here
 
-- No decompiled ItemsAdder source, no remapped JAR, no rename map checked in. Those are local outputs of the pipeline, derived from someone else's code.
 - No license bypass. The write-up explains where the check lives and why it fails open in this build; it does not patch it.
 - No runtime testing. Everything is static analysis plus structural checks.
+
+The decompiled source, the renamed JAR and both mapping tables **are** checked in, under `work/04-decompiled/` and
+`work/03-deobfuscation/`. They are derived from a paid plugin: read them, diff them, learn from them, but the
+original licence still governs what you may do with the code.
 
 ### Reproduce
 
 ```bash
 python tools/scan_jar.py path/to/ItemsAdder.jar          # audit
 python tools/hints.py src_obf out/hints.tsv              # NMS hints
-javac -cp asm.jar tools/Deobf.java tools/Verify.java
-java  -cp "asm.jar;." Deobf path/to/ItemsAdder.jar out
-java  -cp "asm.jar;." Verify out/ItemsAdder_4.0.18.deobf.jar
+javac -cp asm.jar tools/Deobf.java tools/Describe.java tools/Verify.java
+java  -cp "asm.jar;." Deobf    path/to/ItemsAdder.jar out
+java  -cp "asm.jar;." Describe out/ItemsAdder_4.0.18.deobf.jar out/mapping.tsv out/classes.tsv
+java  -cp "asm.jar;." Verify   out/ItemsAdder_4.0.18.deobf.jar
+python tools/render_catalog.py                           # CLASSES.md
 ```
 
 `asm.jar` is any ASM 9 build (Recaf ships one).
 
 ### Limits
 
-Names are inferred, not recovered. `NmsWrapperFactory` was never called that. The 510 unnamed classes are anonymous tuples, lambdas and field bags with no strings, no library interface and no Bukkit type to anchor on. Method and field renaming was out of scope; many members keep real names where they override library methods.
+Names are inferred, not recovered. `NmsWrapperFactory` was never called that. 1,523 of the 1,674 carry an evidence-backed name; the other 151 are anonymous tuples, lambdas and field bags with no strings, no library interface and no Bukkit type to anchor on, and keep the `Opaque` prefix. 1,057 names carry a `_N` suffix because they share a category — `PacketListener_57` is a category, not an identity; the catalogue's description column separates them. Method and field renaming was out of scope; many members keep real names where they override library methods.
 
 ---
 
@@ -133,7 +149,20 @@ Names are inferred, not recovered. `NmsWrapperFactory` was never called that. Th
 
 Un registro completo del análisis estático de `ItemsAdder_4.0.18.jar` (4,7 MB, 2.197 entradas, 1.946 clases): qué contacta el plugin en la red, si contiene algo malicioso, cómo funciona la ofuscación y cómo se recuperaron 1.674 clases sin nombre a nombres legibles.
 
+> ItemsAdder es software de pago y código cerrado de LoneDev. Este repositorio contiene las herramientas, el análisis y **toda la salida descompilada**: 1.946 clases renombradas y originales, el JAR remapeado, el mapa de renombrado y un catálogo clase por clase. Sin bypass de licencia. La licencia original sigue rigiendo la reutilización del código del plugin.
+
 Todo es reproducible con las herramientas de `tools/`. La salida cruda por etapas — escaneo, mapa, pistas, contadores — está en [`work/`](work/).
+
+```
+CLASSES.md            las 1.674 clases, una fila cada una: nombre nuevo, nombre viejo, qué hace
+AUDIT.md              qué contacta el plugin, qué se revisó, qué se encontró
+DEOBFUSCATION.md      cómo funciona el renombrado, regla por regla
+tools/                escáner, renombrador, extractor de hechos, validador, render del catálogo
+work/01-inventory/    superficie de bytecode que toca el exterior
+work/02-audit/        resultados del escaneo estático
+work/03-deobfuscation/mapa, evidencia, pistas NMS, hechos por clase
+work/04-decompiled/   1.946 clases renombradas y originales, más el JAR remapeado
+```
 
 ### 1. Inventario
 
@@ -224,22 +253,27 @@ La verificación de bytecode reporta 1.081 avisos — **exactamente el mismo nú
 
 ### 6. Qué no hay aquí
 
-- No hay código fuente descompilado de ItemsAdder, ni JAR remapeado, ni mapa de renombrado en el repositorio. Son salidas locales del pipeline, derivadas del código de otra persona.
 - No hay bypass de licencia. El documento explica dónde está la comprobación y por qué falla abierta en esta compilación; no la parchea.
 - No hay pruebas en ejecución. Todo es análisis estático más comprobaciones estructurales.
+
+El código descompilado, el JAR renombrado y las dos tablas de mapeo **sí** están en el repositorio, en
+`work/04-decompiled/` y `work/03-deobfuscation/`. Derivados de un plugin de pago: léelos, compáralos, aprende
+de ellos, pero la licencia original sigue rigiendo qué puedes hacer con el código.
 
 ### Reproducir
 
 ```bash
 python tools/scan_jar.py ruta/a/ItemsAdder.jar        # auditoría
 python tools/hints.py src_obf out/hints.tsv           # pistas NMS
-javac -cp asm.jar tools/Deobf.java tools/Verify.java
-java  -cp "asm.jar;." Deobf ruta/a/ItemsAdder.jar out
-java  -cp "asm.jar;." Verify out/ItemsAdder_4.0.18.deobf.jar
+javac -cp asm.jar tools/Deobf.java tools/Describe.java tools/Verify.java
+java  -cp "asm.jar;." Deobf    ruta/a/ItemsAdder.jar out
+java  -cp "asm.jar;." Describe out/ItemsAdder_4.0.18.deobf.jar out/mapping.tsv out/classes.tsv
+java  -cp "asm.jar;." Verify   out/ItemsAdder_4.0.18.deobf.jar
+python tools/render_catalog.py                        # CLASSES.md
 ```
 
 `asm.jar` es cualquier build de ASM 9 (Recaf incluye uno).
 
 ### Límites
 
-Los nombres son inferidos, no recuperados. `NmsWrapperFactory` nunca se llamó así. Las 510 clases sin nombre son tuplas anónimas, lambdas y bolsas de campos sin cadenas, sin interfaz de librería y sin tipo Bukkit al que anclarse. El renombrado de métodos y campos quedó fuera de alcance; muchos miembros conservan su nombre real cuando sobrescriben métodos de librería.
+Los nombres son inferidos, no recuperados. `NmsWrapperFactory` nunca se llamó así. 1.523 de las 1.674 tienen nombre respaldado por evidencia; las otras 151 son tuplas anónimas, lambdas y bolsas de campos sin cadenas, sin interfaz de librería y sin tipo Bukkit al que anclarse, y conservan el prefijo `Opaque`. 1.057 nombres llevan sufijo `_N` porque comparten categoría: `PacketListener_57` es una categoría, no una identidad; la columna de descripción del catálogo es lo que las separa. El renombrado de métodos y campos quedó fuera de alcance; muchos miembros conservan su nombre real cuando sobrescriben métodos de librería.
