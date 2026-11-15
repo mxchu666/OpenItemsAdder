@@ -293,6 +293,7 @@ public class Deobf {
         String kind;
         String evidence;
         String candidate;
+        String product;
         int access;
     }
 
@@ -457,10 +458,33 @@ public class Deobf {
                     && Type.getReturnType(m.desc).getDescriptor().equals("L" + cn.name + ";")) fluent++;
         }
         if (fluent >= 2) {
+            // Prefer naming the builder after the type it produces, then after its fields.
+            String product = null;
+            String productType = null;
+            for (MethodNode m : cn.methods) {
+                if (m.name.startsWith("<")) continue;
+                Type r = Type.getReturnType(m.desc);
+                if (r.getSort() != Type.OBJECT) continue;
+                String in = r.getInternalName();
+                if (in.equals(cn.name)) continue;
+                if (in.startsWith("itemsadder/") || isBukkitType(in)) {
+                    String s = simple(in);
+                    boolean obfProduct = in.startsWith(OBF_PKG) && all.containsKey(in);
+                    if ((obfProduct || (s.length() >= 4 && Character.isUpperCase(s.charAt(0))))) {
+                        product = pascal(s);
+                        productType = in;
+                        break;
+                    }
+                }
+            }
             String dom = dominantType(cn);
+            boolean obfProduct = productType != null && productType.startsWith(OBF_PKG);
+            String base = obfProduct ? "Builder" : (product != null ? product : (dom == null ? "Fluent" : pascal(dom)));
             ci.kind = "builder";
-            ci.evidence = fluent + " fluent setters returning self" + (dom == null ? "" : ", fields " + dom);
-            ci.candidate = (dom == null ? "Fluent" : pascal(dom)) + "Builder";
+            ci.product = productType;
+            ci.evidence = fluent + " fluent setters returning self"
+                    + (product != null ? ", produces " + product : (dom == null ? "" : ", fields " + dom));
+            ci.candidate = obfProduct ? "Builder" : base + "Builder";
             return ci;
         }
 
@@ -479,10 +503,29 @@ public class Deobf {
         // Pure data carrier: fields and nothing else
         long realMethods = cn.methods.stream().filter(m -> !m.name.startsWith("<")).count();
         if (realMethods == 0 && !cn.fields.isEmpty()) {
-            String dom = dominantType(cn);
+            List<String> parts = new ArrayList<>();
+            for (FieldNode f : cn.fields) {
+                String t = f.desc.replace("[", "");
+                String label = switch (t) {
+                    case "I" -> "Int";
+                    case "J" -> "Long";
+                    case "D" -> "Double";
+                    case "F" -> "Float";
+                    case "Z" -> "Bool";
+                    case "B" -> "Byte";
+                    case "S" -> "Short";
+                    case "C" -> "Char";
+                    default -> {
+                        String s = simple(t);
+                        yield s.length() >= 3 && Character.isUpperCase(s.charAt(0)) ? s : "Ref";
+                    }
+                };
+                if (!parts.contains(label)) parts.add(label);
+            }
+            String base = String.join("", parts.stream().limit(3).toList());
             ci.kind = "dto";
-            ci.evidence = cn.fields.size() + " fields" + (dom == null ? "" : ", " + dom);
-            ci.candidate = (dom == null ? "Value" : pascal(dom)) + "Data";
+            ci.evidence = cn.fields.size() + " fields (" + String.join(",", parts) + ")";
+            ci.candidate = (base.isEmpty() ? "Value" : base) + "Data";
             return ci;
         }
 
@@ -751,6 +794,14 @@ public class Deobf {
             byBase.put(ci.name, base);
         }
         // Resolve collisions per package with a numeric suffix.
+        // Builders take their product's final name, once that product has one.
+        for (ClassInfo ci : info.values()) {
+            if (!"builder".equals(ci.kind) || ci.product == null) continue;
+            String prodBase = byBase.get(ci.product);
+            if (prodBase == null || prodBase.startsWith("Class") || prodBase.startsWith("Opaque")
+                    || prodBase.startsWith("Builder")) continue;
+            byBase.put(ci.name, prodBase + "Builder");
+        }
         // Second chance for unnamed classes: inherit their superclass's name.
         for (ClassInfo ci : info.values()) {
             if (!"fallback".equals(ci.kind)) continue;

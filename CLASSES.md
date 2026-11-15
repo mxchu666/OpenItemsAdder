@@ -568,7 +568,7 @@ Interfaces que definen una API interna o un wrapper.
 
 | Clase | Antes | Qué hace |
 |---|---|---|
-| `BlockWrapper` | `abl` | Contrato interno sobre `BlockBuilder`: 16 métodos, 0 campos. Lo implementan las clases `*Impl` correspondientes. |
+| `BlockWrapper` | `abl` | Contrato interno sobre `LocationBridgeBuilder_2`: 16 métodos, 0 campos. Lo implementan las clases `*Impl` correspondientes. |
 | `BlockWrapper_2` | `afk` | Contrato interno sobre `Location`: 7 métodos, 0 campos. Lo implementan las clases `*Impl` correspondientes. |
 | `BlockWrapper_3` | `ahe` | Contrato interno sobre `Material`: 8 métodos, 0 campos. Lo implementan las clases `*Impl` correspondientes. |
 | `BlockWrapper_4` | `qz` | Contrato interno sobre `Location`: 5 métodos, 0 campos. Lo implementan las clases `*Impl` correspondientes. |
@@ -576,7 +576,7 @@ Interfaces que definen una API interna o un wrapper.
 | `EntityTypeWrapper` | `ake` | Contrato interno sobre `EntityTypeBridge`: 17 métodos, 0 campos. Lo implementan las clases `*Impl` correspondientes. |
 | `EntityWrapper` | `agb` | Contrato interno sobre `EntityBridge_5`: 42 métodos, 1 campos. Lo implementan las clases `*Impl` correspondientes. |
 | `EntityWrapper_2` | `uf` | Contrato interno sobre `Block`: 2 métodos, 0 campos. Lo implementan las clases `*Impl` correspondientes. |
-| `EventWrapper` | `be` | Contrato interno sobre `LocationBuilder`: 8 métodos, 0 campos. Lo implementan las clases `*Impl` correspondientes. |
+| `EventWrapper` | `be` | Contrato interno sobre `LivingEntityBuilder`: 8 métodos, 0 campos. Lo implementan las clases `*Impl` correspondientes. |
 | `ItemStackWrapper` | `aii` | Contrato interno sobre `Player`: 22 métodos, 0 campos. Lo implementan las clases `*Impl` correspondientes. |
 | `LivingEntityWrapper` | `acm` | Contrato interno sobre `objetos internos`: 4 métodos, 0 campos. Lo implementan las clases `*Impl` correspondientes. |
 | `LivingEntityWrapper_2` | `zu` | Contrato interno sobre `objetos internos`: 2 métodos, 0 campos. Lo implementan las clases `*Impl` correspondientes. |
@@ -595,7 +595,7 @@ Interfaces que definen una API interna o un wrapper.
 | `PluginContract` | `ai` | Contrato interno sobre `objetos internos`: 3 métodos, 0 campos. Lo implementan las clases `*Impl` correspondientes. |
 | `PluginContract_10` | `bji` | Contrato interno sobre `objetos internos`: 2 métodos, 0 campos. Lo implementan las clases `*Impl` correspondientes. |
 | `PluginContract_11` | `bjm` | Contrato interno sobre `PluginContract_14`: 23 métodos, 0 campos. Lo implementan las clases `*Impl` correspondientes. |
-| `PluginContract_12` | `bjy` | Contrato interno sobre `FluentBuilder_16`: 20 métodos, 0 campos. Lo implementan las clases `*Impl` correspondientes. |
+| `PluginContract_12` | `bjy` | Contrato interno sobre `FluentBuilder_3`: 20 métodos, 0 campos. Lo implementan las clases `*Impl` correspondientes. |
 | `PluginContract_13` | `bkn` | Contrato interno sobre `objetos internos`: 0 métodos, 0 campos. Lo implementan las clases `*Impl` correspondientes. |
 | `PluginContract_14` | `bko` | Contrato interno sobre `PluginContract_11`: 9 métodos, 0 campos. Lo implementan las clases `*Impl` correspondientes. |
 | `PluginContract_15` | `bku` | Contrato interno sobre `objetos internos`: 3 métodos, 0 campos. Lo implementan las clases `*Impl` correspondientes. |
@@ -622,47 +622,59 @@ Clases que implementan o extienden otra clase ya nombrada.
 |---|---|---|
 | `BufferedEnumImpl` | `bli` | Implementación de `BufferedEnum`. 20 métodos. |
 | `BufferedEnumImpl_2` | `blj` | Implementación de `BufferedEnum`. 20 métodos. |
+| `BuilderImpl` | `gg` | Implementación de `Builder_6`. 7 métodos. |
+| `BuilderImpl_2` | `gj` | Implementación de `Builder_7`. 7 métodos. |
+| `BuilderImpl_3` | `he` | Implementación de `Builder_8`. 5 métodos. |
+| `BuilderImpl_4` | `hk` | Implementación de `Builder_9`. 5 métodos. |
+| `BuilderImpl_5` | `hn` | Implementación de `Builder_10`. 5 métodos. |
+| `BuilderImpl_6` | `hw` | Implementación de `Builder_11`. 5 métodos. |
+| `BuilderImpl_7` | `hz` | Implementación de `Builder_12`. 5 métodos. |
+| `BuilderImpl_8` | `ic` | Implementación de `Builder_13`. 5 métodos. |
 | `ChunkStreamSomehowImpl` | `mn` | Implementación de `ChunkStreamSomehow`. 9 métodos. |
 | `DoubleEnumImpl` | `bla` | Implementación de `DoubleEnum`. 1 métodos. |
 | `DoubleEnumImpl_2` | `blb` | Implementación de `DoubleEnum`. 1 métodos. |
 | `DoubleEnumImpl_3` | `blc` | Implementación de `DoubleEnum`. 1 métodos. |
 | `DoubleEnumImpl_4` | `bld` | Implementación de `DoubleEnum`. 1 métodos. |
+| `EntityBridgeBuilderImpl` | `at` | Implementación de `EntityBridgeBuilder`. 5 métodos. |
 | `EntityBridgeImpl` | `as` | Implementación de `EntityBridge`. 0 métodos. |
-| `EntityTypeBuilderImpl` | `bk` | Implementación de `EntityTypeBuilder`. 7 métodos. |
-| `EntityTypeBuilderImpl_2` | `hh` | Implementación de `EntityTypeBuilder_5`. 7 métodos. |
-| `EntityTypeDataImpl` | `ge` | Implementación de `EntityTypeData`. 1 métodos. |
-| `EntityTypeDataImpl_2` | `gh` | Implementación de `EntityTypeData`. 1 métodos. |
-| `FluentBuilderImpl` | `at` | Implementación de `FluentBuilder`. 5 métodos. |
-| `FluentBuilderImpl_10` | `gr` | Implementación de `FluentBuilderImpl_9`. 5 métodos. |
-| `FluentBuilderImpl_11` | `gt` | Implementación de `FluentBuilder_26`. 6 métodos. |
-| `FluentBuilderImpl_12` | `gu` | Implementación de `FluentBuilderImpl_11`. 5 métodos. |
-| `FluentBuilderImpl_13` | `gw` | Implementación de `FluentBuilder_26`. 5 métodos. |
-| `FluentBuilderImpl_14` | `gx` | Implementación de `FluentBuilderImpl_13`. 5 métodos. |
-| `FluentBuilderImpl_15` | `he` | Implementación de `FluentBuilder_29`. 5 métodos. |
-| `FluentBuilderImpl_16` | `hk` | Implementación de `FluentBuilder_30`. 5 métodos. |
-| `FluentBuilderImpl_17` | `hn` | Implementación de `FluentBuilder_31`. 5 métodos. |
-| `FluentBuilderImpl_18` | `hp` | Implementación de `FluentBuilder_26`. 6 métodos. |
-| `FluentBuilderImpl_19` | `hq` | Implementación de `FluentBuilderImpl_18`. 5 métodos. |
-| `FluentBuilderImpl_2` | `bd` | Implementación de `FluentBuilder_11`. 7 métodos. |
-| `FluentBuilderImpl_20` | `hs` | Implementación de `FluentBuilder_26`. 5 métodos. |
-| `FluentBuilderImpl_21` | `ht` | Implementación de `FluentBuilderImpl_20`. 5 métodos. |
-| `FluentBuilderImpl_22` | `hw` | Implementación de `FluentBuilder_32`. 5 métodos. |
-| `FluentBuilderImpl_23` | `hz` | Implementación de `FluentBuilder_33`. 5 métodos. |
-| `FluentBuilderImpl_24` | `ic` | Implementación de `FluentBuilder_34`. 5 métodos. |
-| `FluentBuilderImpl_25` | `if` | Implementación de `FluentBuilder_35`. 5 métodos. |
-| `FluentBuilderImpl_26` | `ui` | Implementación de `FluentBuilder_41`. 3 métodos. |
-| `FluentBuilderImpl_3` | `bh` | Implementación de `FluentBuilder_14`. 7 métodos. |
-| `FluentBuilderImpl_4` | `cc` | Implementación de `FluentBuilder_20`. 5 métodos. |
-| `FluentBuilderImpl_5` | `gg` | Implementación de `FluentBuilder_27`. 7 métodos. |
-| `FluentBuilderImpl_6` | `gj` | Implementación de `FluentBuilder_28`. 7 métodos. |
-| `FluentBuilderImpl_7` | `gl` | Implementación de `FluentBuilder_26`. 5 métodos. |
-| `FluentBuilderImpl_8` | `gm` | Implementación de `FluentBuilderImpl_7`. 5 métodos. |
-| `FluentBuilderImpl_9` | `gq` | Implementación de `FluentBuilder_26`. 5 métodos. |
+| `EntityTypeBridgeBuilderImpl` | `hh` | Implementación de `EntityTypeBridgeBuilder_2`. 7 métodos. |
+| `EntityTypeBridgeBuilderImpl_2` | `if` | Implementación de `EntityTypeBridgeBuilder_3`. 5 métodos. |
+| `EntityTypeRefDataImpl` | `ge` | Implementación de `EntityTypeRefData`. 1 métodos. |
+| `EntityTypeRefDataImpl_2` | `gh` | Implementación de `EntityTypeRefData`. 1 métodos. |
+| `EventBridgeBuilderImpl` | `bd` | Implementación de `EventBridgeBuilder`. 7 métodos. |
+| `EventBridgeBuilderImpl_2` | `bh` | Implementación de `EventBridgeBuilder_2`. 7 métodos. |
+| `EventBridgeBuilderImpl_3` | `bk` | Implementación de `EventBridgeBuilder_3`. 7 métodos. |
 | `HitboxImpl` | `ef` | Implementación de `Hitbox`. 1 métodos. |
+| `IntBoolDataBuilderImpl` | `gl` | Implementación de `IntBoolDataBuilder`. 5 métodos. |
+| `IntBoolDataBuilderImpl_10` | `hq` | Implementación de `IntBoolDataBuilderImpl_9`. 5 métodos. |
+| `IntBoolDataBuilderImpl_11` | `hs` | Implementación de `IntBoolDataBuilder`. 5 métodos. |
+| `IntBoolDataBuilderImpl_12` | `ht` | Implementación de `IntBoolDataBuilderImpl_11`. 5 métodos. |
+| `IntBoolDataBuilderImpl_2` | `gm` | Implementación de `IntBoolDataBuilderImpl`. 5 métodos. |
+| `IntBoolDataBuilderImpl_3` | `gq` | Implementación de `IntBoolDataBuilder`. 5 métodos. |
+| `IntBoolDataBuilderImpl_4` | `gr` | Implementación de `IntBoolDataBuilderImpl_3`. 5 métodos. |
+| `IntBoolDataBuilderImpl_5` | `gt` | Implementación de `IntBoolDataBuilder`. 6 métodos. |
+| `IntBoolDataBuilderImpl_6` | `gu` | Implementación de `IntBoolDataBuilderImpl_5`. 5 métodos. |
+| `IntBoolDataBuilderImpl_7` | `gw` | Implementación de `IntBoolDataBuilder`. 5 métodos. |
+| `IntBoolDataBuilderImpl_8` | `gx` | Implementación de `IntBoolDataBuilderImpl_7`. 5 métodos. |
+| `IntBoolDataBuilderImpl_9` | `hp` | Implementación de `IntBoolDataBuilder`. 6 métodos. |
+| `IntBoolDataImpl` | `gk` | Implementación de `IntBoolData`. 1 métodos. |
+| `IntBoolDataImpl_10` | `hu` | Implementación de `IntBoolData`. 1 métodos. |
+| `IntBoolDataImpl_11` | `hx` | Implementación de `IntBoolData`. 1 métodos. |
+| `IntBoolDataImpl_12` | `ia` | Implementación de `IntBoolData`. 1 métodos. |
+| `IntBoolDataImpl_2` | `gp` | Implementación de `IntBoolData`. 1 métodos. |
+| `IntBoolDataImpl_3` | `gs` | Implementación de `IntBoolData`. 1 métodos. |
+| `IntBoolDataImpl_4` | `gv` | Implementación de `IntBoolData`. 1 métodos. |
+| `IntBoolDataImpl_5` | `ha` | Implementación de `IntBoolData`. 1 métodos. |
+| `IntBoolDataImpl_6` | `hi` | Implementación de `IntBoolData`. 1 métodos. |
+| `IntBoolDataImpl_7` | `hl` | Implementación de `IntBoolData`. 1 métodos. |
+| `IntBoolDataImpl_8` | `ho` | Implementación de `IntBoolData`. 1 métodos. |
+| `IntBoolDataImpl_9` | `hr` | Implementación de `IntBoolData`. 1 métodos. |
 | `ItemStackBridgeImpl` | `ub` | Implementación de `ItemStackBridge_33`. 1 métodos. |
+| `LocationBridgeBuilderImpl` | `ui` | Implementación de `LocationBridgeBuilder_4`. 3 métodos. |
 | `LocationBridgeImpl` | `ul` | Implementación de `LocationBridge_14`. 3 métodos. |
 | `PacketTypeHelperImpl` | `arm` | Implementación de `PacketTypeHelper_2`. 2 métodos. |
 | `ParentImpl` | `azq` | Implementación de `Parent_2`. 1 métodos. |
+| `PlayerBridgeBuilderImpl` | `cc` | Implementación de `PlayerBridgeBuilder`. 5 métodos. |
 | `PlayerBridgeImpl` | `ik` | Implementación de `PlayerBridge_8`. 12 métodos. |
 | `PlayerBridgeImpl_2` | `im` | Implementación de `PlayerBridge_8`. 5 métodos. |
 | `PlayerBridgeImpl_3` | `in` | Implementación de `PlayerBridge_8`. 5 métodos. |
@@ -674,18 +686,6 @@ Clases que implementan o extienden otra clase ya nombrada.
 | `PluginContractImpl_6` | `bkk` | Implementación de `Opaque105`. 22 métodos. |
 | `PluginContractImpl_7` | `qy` | Implementación de `Object`. 8 métodos. |
 | `PluginContractImpl_8` | `to` | Implementación de `Object`. 2 métodos. |
-| `ValueDataImpl` | `gk` | Implementación de `ValueData_14`. 1 métodos. |
-| `ValueDataImpl_10` | `hu` | Implementación de `ValueData_14`. 1 métodos. |
-| `ValueDataImpl_11` | `hx` | Implementación de `ValueData_14`. 1 métodos. |
-| `ValueDataImpl_12` | `ia` | Implementación de `ValueData_14`. 1 métodos. |
-| `ValueDataImpl_2` | `gp` | Implementación de `ValueData_14`. 1 métodos. |
-| `ValueDataImpl_3` | `gs` | Implementación de `ValueData_14`. 1 métodos. |
-| `ValueDataImpl_4` | `gv` | Implementación de `ValueData_14`. 1 métodos. |
-| `ValueDataImpl_5` | `ha` | Implementación de `ValueData_14`. 1 métodos. |
-| `ValueDataImpl_6` | `hi` | Implementación de `ValueData_14`. 1 métodos. |
-| `ValueDataImpl_7` | `hl` | Implementación de `ValueData_14`. 1 métodos. |
-| `ValueDataImpl_8` | `ho` | Implementación de `ValueData_14`. 1 métodos. |
-| `ValueDataImpl_9` | `hr` | Implementación de `ValueData_14`. 1 métodos. |
 | `VectorBridgeImpl` | `bbq` | Implementación de `VectorBridge_2`. 8 métodos. |
 
 ## Builders
@@ -694,64 +694,64 @@ Objetos con setters fluidos que devuelven `this` y construyen otro objeto.
 
 | Clase | Antes | Qué hace |
 |---|---|---|
-| `BlockBuilder` | `ql` | Builder fluido de `PluginFileConfigurationHolder`: 2 setters que devuelven `this`, 21 campos. |
-| `BlockPositionBuilder` | `bax` | Builder fluido de `Location`: 7 setters que devuelven `this`, 3 campos. |
-| `EntityBuilder` | `ou` | Builder fluido de `Opaque124`: 3 setters que devuelven `this`, 5 campos. |
-| `EntityTypeBuilder` | `bj` | Builder fluido de `EventBridge_3`: 3 setters que devuelven `this`, 3 campos. |
-| `EntityTypeBuilder_2` | `dq` | Builder fluido de `Hitbox`: 25 setters que devuelven `this`, 28 campos. |
-| `EntityTypeBuilder_3` | `gb` | Builder fluido de `Predicate_2`: 2 setters que devuelven `this`, 2 campos. |
-| `EntityTypeBuilder_4` | `hc` | Builder fluido de `Predicate_2`: 2 setters que devuelven `this`, 2 campos. |
-| `EntityTypeBuilder_5` | `hg` | Builder fluido de `EntityTypeBridge_2`: 4 setters que devuelven `this`, 4 campos. |
-| `FluentBuilder` | `ar` | Builder fluido de `Opaque124`: 5 setters que devuelven `this`, 5 campos. |
-| `FluentBuilder_10` | `bbz` | Builder fluido de `Opaque019`: 3 setters que devuelven `this`, 4 campos. |
-| `FluentBuilder_11` | `bc` | Builder fluido de `EventBridge`: 4 setters que devuelven `this`, 4 campos. |
-| `FluentBuilder_12` | `ben` | Builder fluido de `InstanceHolder_6`: 7 setters que devuelven `this`, 6 campos. |
-| `FluentBuilder_13` | `beu` | Builder fluido de `objeto`: 2 setters que devuelven `this`, 0 campos. |
-| `FluentBuilder_14` | `bg` | Builder fluido de `ValueData_33`: 2 setters que devuelven `this`, 2 campos. |
-| `FluentBuilder_15` | `biw` | Builder fluido de `PluginContract_14`: 2 setters que devuelven `this`, 6 campos. |
-| `FluentBuilder_16` | `biy` | Builder fluido de `PluginContract_12`: 6 setters que devuelven `this`, 5 campos. |
-| `FluentBuilder_17` | `biz` | Builder fluido de `PluginContract_14`: 3 setters que devuelven `this`, 13 campos. |
-| `FluentBuilder_18` | `bjp` | Builder fluido de `objeto`: 14 setters que devuelven `this`, 5 campos. |
-| `FluentBuilder_19` | `bjq` | Builder fluido de `objeto`: 5 setters que devuelven `this`, 7 campos. |
-| `FluentBuilder_2` | `axy` | Builder fluido de `FluentBuilder_7`: 9 setters que devuelven `this`, 10 campos. |
-| `FluentBuilder_20` | `cb` | Builder fluido de `PlayerBridge_21`: 5 setters que devuelven `this`, 5 campos. |
-| `FluentBuilder_21` | `df` | Builder fluido de `EntityTypeBarStyleHolder`: 10 setters que devuelven `this`, 10 campos. |
-| `FluentBuilder_22` | `dl` | Builder fluido de `ReplaceEnum`: 2 setters que devuelven `this`, 2 campos. |
-| `FluentBuilder_23` | `ev` | Builder fluido de `objeto`: 7 setters que devuelven `this`, 7 campos. |
-| `FluentBuilder_24` | `fn` | Builder fluido de `FluentBuilder_25`: 3 setters que devuelven `this`, 3 campos. |
-| `FluentBuilder_25` | `fq` | Builder fluido de `RecordOfValue_19`: 3 setters que devuelven `this`, 8 campos. |
-| `FluentBuilder_26` | `fz` | Builder fluido de `ValueData_14`: 2 setters que devuelven `this`, 2 campos. |
-| `FluentBuilder_27` | `gf` | Builder fluido de `EntityTypeDataImpl`: 3 setters que devuelven `this`, 3 campos. |
-| `FluentBuilder_28` | `gi` | Builder fluido de `EntityTypeDataImpl_2`: 3 setters que devuelven `this`, 3 campos. |
-| `FluentBuilder_29` | `hd` | Builder fluido de `EntityTypeBridge`: 2 setters que devuelven `this`, 2 campos. |
-| `FluentBuilder_3` | `aya` | Builder fluido de `FluentBuilder_2`: 3 setters que devuelven `this`, 4 campos. |
-| `FluentBuilder_30` | `hj` | Builder fluido de `ValueDataImpl_6`: 2 setters que devuelven `this`, 2 campos. |
-| `FluentBuilder_31` | `hm` | Builder fluido de `ValueDataImpl_7`: 3 setters que devuelven `this`, 3 campos. |
-| `FluentBuilder_32` | `hv` | Builder fluido de `ValueDataImpl_10`: 2 setters que devuelven `this`, 2 campos. |
-| `FluentBuilder_33` | `hy` | Builder fluido de `ValueDataImpl_11`: 2 setters que devuelven `this`, 2 campos. |
-| `FluentBuilder_34` | `ib` | Builder fluido de `ValueDataImpl_12`: 3 setters que devuelven `this`, 3 campos. |
-| `FluentBuilder_35` | `ie` | Builder fluido de `EntityTypeBridge_3`: 3 setters que devuelven `this`, 3 campos. |
-| `FluentBuilder_36` | `ri` | Builder fluido de `RecordOfValue_23`: 8 setters que devuelven `this`, 8 campos. |
-| `FluentBuilder_37` | `rt` | Builder fluido de `ReplaceEnum_2`: 2 setters que devuelven `this`, 2 campos. |
-| `FluentBuilder_38` | `sf` | Builder fluido de `PlayerBridge_21`: 7 setters que devuelven `this`, 7 campos. |
-| `FluentBuilder_39` | `th` | Builder fluido de `FluentBuilder_40`: 6 setters que devuelven `this`, 8 campos. |
-| `FluentBuilder_4` | `ayc` | Builder fluido de `FluentBuilder_3`: 6 setters que devuelven `this`, 6 campos. |
-| `FluentBuilder_40` | `tj` | Builder fluido de `RecordOfString_10`: 9 setters que devuelven `this`, 11 campos. |
-| `FluentBuilder_41` | `uh` | Builder fluido de `LocationBridge_14`: 7 setters que devuelven `this`, 12 campos. |
-| `FluentBuilder_5` | `ayd` | Builder fluido de `FluentBuilder_3`: 3 setters que devuelven `this`, 4 campos. |
-| `FluentBuilder_6` | `ayg` | Builder fluido de `PluginContract_14`: 4 setters que devuelven `this`, 3 campos. |
-| `FluentBuilder_7` | `ayi` | Builder fluido de `PluginContract_14`: 4 setters que devuelven `this`, 3 campos. |
-| `FluentBuilder_8` | `ayk` | Builder fluido de `PluginContract_14`: 3 setters que devuelven `this`, 3 campos. |
-| `FluentBuilder_9` | `ayl` | Builder fluido de `PluginContract_14`: 3 setters que devuelven `this`, 4 campos. |
-| `ItemMetaBuilder` | `bis` | Builder fluido de `ItemStack`: 21 setters que devuelven `this`, 1 campos. |
+| `BoundingBoxBuilder` | `ck` | Builder fluido de `Vector`: 2 setters que devuelven `this`, 6 campos. |
+| `Builder` | `axy` | Builder fluido de `PluginContractBuilder_2`: 9 setters que devuelven `this`, 10 campos. |
+| `Builder_10` | `hm` | Builder fluido de `IntBoolDataImpl_7`: 3 setters que devuelven `this`, 3 campos. |
+| `Builder_11` | `hv` | Builder fluido de `IntBoolDataImpl_10`: 2 setters que devuelven `this`, 2 campos. |
+| `Builder_12` | `hy` | Builder fluido de `IntBoolDataImpl_11`: 2 setters que devuelven `this`, 2 campos. |
+| `Builder_13` | `ib` | Builder fluido de `IntBoolDataImpl_12`: 3 setters que devuelven `this`, 3 campos. |
+| `Builder_14` | `ou` | Builder fluido de `Opaque124`: 3 setters que devuelven `this`, 5 campos. |
+| `Builder_15` | `rt` | Builder fluido de `ReplaceEnum_2`: 2 setters que devuelven `this`, 2 campos. |
+| `Builder_2` | `aya` | Builder fluido de `PluginContract_14`: 3 setters que devuelven `this`, 4 campos. |
+| `Builder_3` | `ayc` | Builder fluido de `Builder_2`: 6 setters que devuelven `this`, 6 campos. |
+| `Builder_4` | `ayd` | Builder fluido de `Builder_2`: 3 setters que devuelven `this`, 4 campos. |
+| `Builder_5` | `fn` | Builder fluido de `RecordOfValueBuilder_2`: 3 setters que devuelven `this`, 3 campos. |
+| `Builder_6` | `gf` | Builder fluido de `EntityTypeRefDataImpl`: 3 setters que devuelven `this`, 3 campos. |
+| `Builder_7` | `gi` | Builder fluido de `EntityTypeRefDataImpl_2`: 3 setters que devuelven `this`, 3 campos. |
+| `Builder_8` | `hd` | Builder fluido de `EntityTypeBridge`: 2 setters que devuelven `this`, 2 campos. |
+| `Builder_9` | `hj` | Builder fluido de `IntBoolDataImpl_6`: 2 setters que devuelven `this`, 2 campos. |
+| `EntityBridgeBuilder` | `ar` | Builder fluido de `Opaque124`: 5 setters que devuelven `this`, 5 campos. |
+| `EntityBuilder` | `x` | Builder fluido de `Player`: 2 setters que devuelven `this`, 13 campos. |
+| `EntityTypeBarStyleHolderBuilder` | `dq` | Builder fluido de `Hitbox`: 25 setters que devuelven `this`, 28 campos. |
+| `EntityTypeBridgeBuilder` | `hc` | Builder fluido de `Predicate_2`: 2 setters que devuelven `this`, 2 campos. |
+| `EntityTypeBridgeBuilder_2` | `hg` | Builder fluido de `EntityTypeBridge_2`: 4 setters que devuelven `this`, 4 campos. |
+| `EntityTypeBridgeBuilder_3` | `ie` | Builder fluido de `EntityTypeBridge_3`: 3 setters que devuelven `this`, 3 campos. |
+| `EntityTypeRefDataBuilder` | `gb` | Builder fluido de `Predicate_2`: 2 setters que devuelven `this`, 2 campos. |
+| `EventBridgeBuilder` | `bc` | Builder fluido de `EntityBridgeImpl`: 4 setters que devuelven `this`, 4 campos. |
+| `EventBridgeBuilder_2` | `bg` | Builder fluido de `StringClassBoolData`: 2 setters que devuelven `this`, 2 campos. |
+| `EventBridgeBuilder_3` | `bj` | Builder fluido de `EventBridge_3`: 3 setters que devuelven `this`, 3 campos. |
+| `FluentBuilder` | `bbz` | Builder fluido de `Opaque019`: 3 setters que devuelven `this`, 4 campos. |
+| `FluentBuilder_2` | `beu` | Builder fluido de `objeto`: 2 setters que devuelven `this`, 0 campos. |
+| `FluentBuilder_3` | `biy` | Builder fluido de `PluginContract_12`: 6 setters que devuelven `this`, 5 campos. |
+| `FluentBuilder_4` | `bjp` | Builder fluido de `objeto`: 14 setters que devuelven `this`, 5 campos. |
+| `FluentBuilder_5` | `bjq` | Builder fluido de `objeto`: 5 setters que devuelven `this`, 7 campos. |
+| `FluentBuilder_6` | `ev` | Builder fluido de `objeto`: 7 setters que devuelven `this`, 7 campos. |
+| `FluentBuilderBuilder` | `biw` | Builder fluido de `PluginContract_14`: 2 setters que devuelven `this`, 6 campos. |
+| `FluentBuilderBuilder_2` | `biz` | Builder fluido de `PluginContract_14`: 3 setters que devuelven `this`, 13 campos. |
+| `InstanceHolderBuilder` | `ben` | Builder fluido de `InstanceHolder_6`: 7 setters que devuelven `this`, 6 campos. |
+| `IntBoolDataBuilder` | `fz` | Builder fluido de `objeto`: 2 setters que devuelven `this`, 2 campos. |
 | `ItemStackBuilder` | `bir` | Builder fluido de `ItemStackBridge_4`: 6 setters que devuelven `this`, 4 campos. |
-| `ItemStackBuilder_2` | `pa` | Builder fluido de `SuccessEnum_2`: 2 setters que devuelven `this`, 2 campos. |
-| `ItemStackBuilder_3` | `qm` | Builder fluido de `PluginFileConfigurationHolder`: 6 setters que devuelven `this`, 58 campos. |
-| `LocationBuilder` | `dn` | Builder fluido de `EntityTypeBarStyleHolder`: 2 setters que devuelven `this`, 62 campos. |
-| `MaterialBuilder` | `bz` | Builder fluido de `ItemStackBuilder_3`: 22 setters que devuelven `this`, 30 campos. |
+| `ItemStackBuilder_2` | `bis` | Builder fluido de `Material`: 21 setters que devuelven `this`, 1 campos. |
+| `ItemStackBuilder_3` | `pa` | Builder fluido de `SuccessEnum_2`: 2 setters que devuelven `this`, 2 campos. |
+| `ItemStackBuilder_4` | `qm` | Builder fluido de `PluginFileConfigurationHolder`: 6 setters que devuelven `this`, 58 campos. |
+| `LivingEntityBuilder` | `dn` | Builder fluido de `EntityTypeBarStyleHolder`: 2 setters que devuelven `this`, 62 campos. |
+| `LocationBridgeBuilder` | `bz` | Builder fluido de `ItemStackBuilder_4`: 22 setters que devuelven `this`, 30 campos. |
+| `LocationBridgeBuilder_2` | `ql` | Builder fluido de `PluginFileConfigurationHolder`: 2 setters que devuelven `this`, 21 campos. |
+| `LocationBridgeBuilder_3` | `sf` | Builder fluido de `PlayerBridge_21`: 7 setters que devuelven `this`, 7 campos. |
+| `LocationBridgeBuilder_4` | `uh` | Builder fluido de `LocationBridge_14`: 7 setters que devuelven `this`, 12 campos. |
+| `PlayerBridgeBuilder` | `cb` | Builder fluido de `PlayerBridge_21`: 5 setters que devuelven `this`, 5 campos. |
 | `PlayerBuilder` | `bas` | Builder fluido de `objeto`: 2 setters que devuelven `this`, 3 campos. |
-| `PlayerBuilder_2` | `x` | Builder fluido de `Entity`: 2 setters que devuelven `this`, 13 campos. |
-| `VectorBuilder` | `ck` | Builder fluido de `BoundingBox`: 2 setters que devuelven `this`, 6 campos. |
+| `PluginContractBuilder` | `ayg` | Builder fluido de `PluginContract_14`: 4 setters que devuelven `this`, 3 campos. |
+| `PluginContractBuilder_2` | `ayi` | Builder fluido de `PluginContract_14`: 4 setters que devuelven `this`, 3 campos. |
+| `PluginContractBuilder_3` | `ayk` | Builder fluido de `PluginContract_14`: 3 setters que devuelven `this`, 3 campos. |
+| `PluginContractBuilder_4` | `ayl` | Builder fluido de `PluginContract_14`: 3 setters que devuelven `this`, 4 campos. |
+| `RecordOfStringBuilder` | `th` | Builder fluido de `RecordOfStringBuilder_2`: 6 setters que devuelven `this`, 8 campos. |
+| `RecordOfStringBuilder_2` | `tj` | Builder fluido de `RecordOfString_10`: 9 setters que devuelven `this`, 11 campos. |
+| `RecordOfValueBuilder` | `df` | Builder fluido de `EntityTypeBarStyleHolder`: 10 setters que devuelven `this`, 10 campos. |
+| `RecordOfValueBuilder_2` | `fq` | Builder fluido de `RecordOfValue_19`: 3 setters que devuelven `this`, 8 campos. |
+| `RecordOfValueBuilder_3` | `ri` | Builder fluido de `RecordOfValue_23`: 8 setters que devuelven `this`, 8 campos. |
+| `ReplaceEnumBuilder` | `dl` | Builder fluido de `RecordOfValue_15`: 2 setters que devuelven `this`, 2 campos. |
+| `VectorBuilder` | `bax` | Builder fluido de `Block`: 7 setters que devuelven `this`, 3 campos. |
 
 ## Contenedores de datos Bukkit
 
@@ -828,51 +828,51 @@ Sólo campos, sin lógica: transporte de datos entre capas.
 
 | Clase | Antes | Qué hace |
 |---|---|---|
-| `BlockData` | `lz` | DTO de 5 campos (`Z`, `Long`, `Block`), sin lógica propia. |
-| `EntityTypeData` | `ga` | DTO de 2 campos (`EntityType`, `Predicate_2`), sin lógica propia. |
-| `InstrumentData` | `aaj` | DTO de 6 campos (`Instrument`, `B`, `String`), sin lógica propia. |
-| `ItemStackData` | `am` | DTO de 4 campos (`Inventory`, `I`, `ItemStack`), sin lógica propia. |
-| `ItemStackData_2` | `jz` | DTO de 2 campos (`String`, `ItemStack`), sin lógica propia. |
-| `ItemStackData_3` | `mm` | DTO de 3 campos (`ItemStack`, `ItemStack`, `I`), sin lógica propia. |
-| `MaterialData` | `qh` | DTO de 3 campos (`Z`, `Z`, `D`), sin lógica propia. |
-| `MaterialData_2` | `qi` | DTO de 2 campos (`Z`, `Z`), sin lógica propia. |
-| `ValueData` | `aei` | DTO de 3 campos (`String`, `Z`, `Boolean`), sin lógica propia. |
-| `ValueData_10` | `bw` | DTO de 3 campos (`BlockBridge_5`, `Z`, `I`), sin lógica propia. |
-| `ValueData_11` | `db` | DTO de 3 campos (`Z`, `Z`, `String`), sin lógica propia. |
-| `ValueData_12` | `dv` | DTO de 2 campos (`I`, `I`), sin lógica propia. |
-| `ValueData_13` | `ed` | DTO de 6 campos (`SoundCategoryBridge_2`, `VectorBridgeImpl`, `VectorBridgeImpl`), sin lógica propia. |
-| `ValueData_14` | `fy` | DTO de 2 campos (`I`, `Z`), sin lógica propia. |
-| `ValueData_15` | `iv` | DTO de 4 campos (`I`, `F`, `I`), sin lógica propia. |
-| `ValueData_16` | `jm` | DTO de 1 campos (`String`), sin lógica propia. |
-| `ValueData_17` | `jy` | DTO de 1 campos (`String`), sin lógica propia. |
-| `ValueData_18` | `ka` | DTO de 1 campos (`String`), sin lógica propia. |
-| `ValueData_19` | `kb` | DTO de 1 campos (`String`), sin lógica propia. |
-| `ValueData_2` | `aij` | DTO de 2 campos (`List`, `F`), sin lógica propia. |
-| `ValueData_20` | `kc` | DTO de 1 campos (`String`), sin lógica propia. |
-| `ValueData_21` | `ke` | DTO de 3 campos (`String`, `String`, `String`), sin lógica propia. |
-| `ValueData_22` | `my` | DTO de 2 campos (`Class`, `Executor`), sin lógica propia. |
-| `ValueData_23` | `nd` | DTO de 1 campos (`Z`), sin lógica propia. |
-| `ValueData_24` | `oy` | DTO de 1 campos (`VectorBridge_2`), sin lógica propia. |
-| `ValueData_25` | `pd` | DTO de 1 campos (`LinkedList`), sin lógica propia. |
-| `ValueData_26` | `qo` | DTO de 5 campos (`Double`, `Double`, `Double`), sin lógica propia. |
-| `ValueData_27` | `qq` | DTO de 2 campos (`Component`, `Z`), sin lógica propia. |
-| `ValueData_28` | `re` | DTO de 5 campos (`String`, `Integer`, `Integer`), sin lógica propia. |
-| `ValueData_29` | `sc` | DTO de 1 campos (`I`), sin lógica propia. |
-| `ValueData_3` | `ain` | DTO de 1 campos (`String`), sin lógica propia. |
-| `ValueData_30` | `sl` | DTO de 3 campos (`Float`, `Float`, `Float`), sin lógica propia. |
-| `ValueData_31` | `vl` | DTO de 3 campos (`I`, `Z`, `ItemStackBuilder_3`), sin lógica propia. |
-| `ValueData_32` | `wd` | DTO de 7 campos (`Z`, `Z`, `Z`), sin lógica propia. |
-| `ValueData_33` | `wk` | DTO de 3 campos (`String`, `Class`, `Z`), sin lógica propia. |
-| `ValueData_34` | `wq` | DTO de 1 campos (`Map`), sin lógica propia. |
-| `ValueData_35` | `wr` | DTO de 3 campos (`I`, `List`, `ValueData_33`), sin lógica propia. |
-| `ValueData_36` | `yi` | DTO de 1 campos (`IaitemCommand`), sin lógica propia. |
-| `ValueData_37` | `zz` | DTO de 7 campos (`List`, `String`, `String`), sin lógica propia. |
-| `ValueData_4` | `aio` | DTO de 1 campos (`Set`), sin lógica propia. |
-| `ValueData_5` | `aip` | DTO de 1 campos (`F`), sin lógica propia. |
-| `ValueData_6` | `avm` | DTO de 2 campos (`I`, `I`), sin lógica propia. |
-| `ValueData_7` | `ayq` | DTO de 4 campos (`Minecraft`, `Map`, `JSONObject`), sin lógica propia. |
-| `ValueData_8` | `bai` | DTO de 2 campos (`I`, `J`), sin lógica propia. |
-| `ValueData_9` | `bdw` | DTO de 2 campos (`I`, `I`), sin lógica propia. |
+| `BoolData` | `nd` | DTO de 1 campos (`Z`), sin lógica propia. |
+| `BoolData_2` | `qi` | DTO de 2 campos (`Z`, `Z`), sin lógica propia. |
+| `BoolData_3` | `wd` | DTO de 7 campos (`Z`, `Z`, `Z`), sin lógica propia. |
+| `BoolDoubleData` | `qh` | DTO de 3 campos (`Z`, `Z`, `D`), sin lógica propia. |
+| `BoolLongBlockData` | `lz` | DTO de 5 campos (`Z`, `Long`, `Block`), sin lógica propia. |
+| `BoolStringData` | `db` | DTO de 3 campos (`Z`, `Z`, `String`), sin lógica propia. |
+| `ClassRefData` | `my` | DTO de 2 campos (`Class`, `Executor`), sin lógica propia. |
+| `ComponentBoolData` | `qq` | DTO de 2 campos (`Component`, `Z`), sin lógica propia. |
+| `DoubleData` | `qo` | DTO de 5 campos (`Double`, `Double`, `Double`), sin lógica propia. |
+| `EntityTypeRefData` | `ga` | DTO de 2 campos (`EntityType`, `Predicate_2`), sin lógica propia. |
+| `FloatData` | `aip` | DTO de 1 campos (`F`), sin lógica propia. |
+| `FloatData_2` | `sl` | DTO de 3 campos (`Float`, `Float`, `Float`), sin lógica propia. |
+| `InstrumentByteStringData` | `aaj` | DTO de 6 campos (`Instrument`, `B`, `String`), sin lógica propia. |
+| `IntBoolData` | `fy` | DTO de 2 campos (`I`, `Z`), sin lógica propia. |
+| `IntBoolRefData` | `vl` | DTO de 3 campos (`I`, `Z`, `ItemStackBuilder_4`), sin lógica propia. |
+| `IntData` | `avm` | DTO de 2 campos (`I`, `I`), sin lógica propia. |
+| `IntData_2` | `bdw` | DTO de 2 campos (`I`, `I`), sin lógica propia. |
+| `IntData_3` | `dv` | DTO de 2 campos (`I`, `I`), sin lógica propia. |
+| `IntData_4` | `sc` | DTO de 1 campos (`I`), sin lógica propia. |
+| `IntFloatRefData` | `iv` | DTO de 4 campos (`I`, `F`, `I`), sin lógica propia. |
+| `IntListRefData` | `wr` | DTO de 3 campos (`I`, `List`, `StringClassBoolData`), sin lógica propia. |
+| `IntLongData` | `bai` | DTO de 2 campos (`I`, `J`), sin lógica propia. |
+| `InventoryIntItemStackData` | `am` | DTO de 4 campos (`Inventory`, `I`, `ItemStack`), sin lógica propia. |
+| `ItemStackIntData` | `mm` | DTO de 3 campos (`ItemStack`, `ItemStack`, `I`), sin lógica propia. |
+| `LinkedListData` | `pd` | DTO de 1 campos (`LinkedList`), sin lógica propia. |
+| `ListFloatData` | `aij` | DTO de 2 campos (`List`, `F`), sin lógica propia. |
+| `ListStringData` | `zz` | DTO de 7 campos (`List`, `String`, `String`), sin lógica propia. |
+| `MapData` | `wq` | DTO de 1 campos (`Map`), sin lógica propia. |
+| `RefBoolIntData` | `bw` | DTO de 3 campos (`BlockBridge_5`, `Z`, `I`), sin lógica propia. |
+| `RefData` | `oy` | DTO de 1 campos (`VectorBridge_2`), sin lógica propia. |
+| `RefData_2` | `yi` | DTO de 1 campos (`IaitemCommand`), sin lógica propia. |
+| `RefIntegerData` | `ed` | DTO de 6 campos (`SoundCategoryBridge_2`, `VectorBridgeImpl`, `VectorBridgeImpl`), sin lógica propia. |
+| `RefMapJSONObjectData` | `ayq` | DTO de 4 campos (`Minecraft`, `Map`, `JSONObject`), sin lógica propia. |
+| `SetData` | `aio` | DTO de 1 campos (`Set`), sin lógica propia. |
+| `StringBoolBooleanData` | `aei` | DTO de 3 campos (`String`, `Z`, `Boolean`), sin lógica propia. |
+| `StringClassBoolData` | `wk` | DTO de 3 campos (`String`, `Class`, `Z`), sin lógica propia. |
+| `StringData` | `ain` | DTO de 1 campos (`String`), sin lógica propia. |
+| `StringData_2` | `jm` | DTO de 1 campos (`String`), sin lógica propia. |
+| `StringData_3` | `jy` | DTO de 1 campos (`String`), sin lógica propia. |
+| `StringData_4` | `ka` | DTO de 1 campos (`String`), sin lógica propia. |
+| `StringData_5` | `kb` | DTO de 1 campos (`String`), sin lógica propia. |
+| `StringData_6` | `kc` | DTO de 1 campos (`String`), sin lógica propia. |
+| `StringData_7` | `ke` | DTO de 3 campos (`String`, `String`, `String`), sin lógica propia. |
+| `StringIntegerBooleanData` | `re` | DTO de 5 campos (`String`, `Integer`, `Integer`), sin lógica propia. |
+| `StringItemStackData` | `jz` | DTO de 2 campos (`String`, `ItemStack`), sin lógica propia. |
 
 ## Records
 
@@ -917,13 +917,13 @@ Sólo campos, sin lógica: transporte de datos entre capas.
 | `RecordOfValue_18` | `fp` | `record` de 3 componentes (`I`, `I`, `I`). |
 | `RecordOfValue_19` | `fr` | `record` de 4 componentes (`S`, `I`, `B`). |
 | `RecordOfValue_2` | `aou` | `record` de 7 componentes (`RecordOfValue`, `D`, `D`). |
-| `RecordOfValue_20` | `jp` | `record` de 3 componentes (`LocationBuilder`, `ItemStackBuilder_3`, `PlayerBridge_16`). |
+| `RecordOfValue_20` | `jp` | `record` de 3 componentes (`LivingEntityBuilder`, `ItemStackBuilder_4`, `PlayerBridge_16`). |
 | `RecordOfValue_21` | `p` | `record` de 2 componentes (`RegexEnum`, `String`). |
 | `RecordOfValue_22` | `pj` | `record` de 4 componentes (`Z`, `Z`, `Z`). |
 | `RecordOfValue_23` | `rh` | `record` de 8 componentes (`I`, `F`, `Z`). |
 | `RecordOfValue_24` | `rn` | `record` de 3 componentes (`Z`, `Z`, `I`). |
 | `RecordOfValue_25` | `rx` | `record` de 3 componentes (`I`, `I`, `F`). |
-| `RecordOfValue_26` | `ta` | `record` de 3 componentes (`ItemStackBuilder_3`, `Z`, `Material`). |
+| `RecordOfValue_26` | `ta` | `record` de 3 componentes (`ItemStackBuilder_4`, `Z`, `Material`). |
 | `RecordOfValue_3` | `aov` | `record` de 7 componentes (`Z`, `Z`, `Z`). |
 | `RecordOfValue_4` | `av` | `record` de 1 componentes (`SuccessEnum`). |
 | `RecordOfValue_5` | `bp` | `record` de 5 componentes (`I`, `I`, `I`). |
@@ -1169,7 +1169,7 @@ Sin interfaz de librería: se nombran por el tipo que más usan.
 | `BaseComponentHelper` | `bau` | Utilidades sobre `objetos internos`: 19 métodos (19 estáticos). Sin interfaz de librería que la identifique. |
 | `BaseComponentHelper_2` | `bbb` | Utilidades sobre `objetos internos`: 21 métodos (21 estáticos). Sin interfaz de librería que la identifique. |
 | `BlockBridge` | `baw` | Utilidades sobre `BoundingBox`: 5 métodos (5 estáticos). Sin interfaz de librería que la identifique. |
-| `BlockBridge_10` | `ny` | Utilidades sobre `ItemStackBuilder_3`: 8 métodos (2 estáticos). Sin interfaz de librería que la identifique. |
+| `BlockBridge_10` | `ny` | Utilidades sobre `ItemStackBuilder_4`: 8 métodos (2 estáticos). Sin interfaz de librería que la identifique. |
 | `BlockBridge_11` | `ow` | Utilidades sobre `MaterialBridge_5`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `BlockBridge_12` | `qw` | Utilidades sobre `PluginFileConfigurationHolder`: 7 métodos (2 estáticos). Sin interfaz de librería que la identifique. |
 | `BlockBridge_13` | `ra` | Utilidades sobre `PluginFileConfigurationHolder`: 7 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
@@ -1177,10 +1177,10 @@ Sin interfaz de librería: se nombran por el tipo que más usan.
 | `BlockBridge_3` | `bez` | Utilidades sobre `Player`: 0 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `BlockBridge_4` | `bfa` | Utilidades sobre `BlockState`: 0 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `BlockBridge_5` | `bm` | Utilidades sobre `RecordOfString_4`: 16 métodos (5 estáticos). Sin interfaz de librería que la identifique. |
-| `BlockBridge_6` | `jr` | Utilidades sobre `ItemStackBuilder_3`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `BlockBridge_7` | `kd` | Utilidades sobre `ItemStackBuilder_3`: 3 métodos (2 estáticos). Sin interfaz de librería que la identifique. |
-| `BlockBridge_8` | `mp` | Utilidades sobre `FluentBuilder_4`: 74 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `BlockBridge_9` | `ms` | Utilidades sobre `FluentBuilder_4`: 102 métodos (8 estáticos). Sin interfaz de librería que la identifique. |
+| `BlockBridge_6` | `jr` | Utilidades sobre `ItemStackBuilder_4`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `BlockBridge_7` | `kd` | Utilidades sobre `ItemStackBuilder_4`: 3 métodos (2 estáticos). Sin interfaz de librería que la identifique. |
+| `BlockBridge_8` | `mp` | Utilidades sobre `Builder_3`: 74 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `BlockBridge_9` | `ms` | Utilidades sobre `Builder_3`: 102 métodos (8 estáticos). Sin interfaz de librería que la identifique. |
 | `BlockDataBridge` | `ig` | Utilidades sobre `BlockState`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `BlockPositionHelper` | `arh` | Utilidades sobre `World`: 5 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `BlockStateBridge` | `gn` | Utilidades sobre `objetos internos`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
@@ -1191,7 +1191,7 @@ Sin interfaz de librería: se nombran por el tipo que más usan.
 | `BukkitTaskBridge` | `bcp` | Utilidades sobre `BukkitScheduler`: 27 métodos (27 estáticos). Sin interfaz de librería que la identifique. |
 | `BukkitTaskBridge_2` | `bet` | Utilidades sobre `BukkitRunnable`: 10 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `ChunkBridge` | `axk` | Utilidades sobre `objetos internos`: 1 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
-| `ChunkBridge_2` | `mq` | Utilidades sobre `FluentBuilder_6`: 5 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `ChunkBridge_2` | `mq` | Utilidades sobre `PluginContractBuilder`: 5 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `ChunkBridge_3` | `xa` | Utilidades sobre `WorldBridge_8`: 11 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
 | `ColorBridge` | `bcy` | Utilidades sobre `Player`: 69 métodos (69 estáticos). Sin interfaz de librería que la identifique. |
 | `ColorBridge_2` | `rd` | Utilidades sobre `PluginFileConfigurationHolder`: 2 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
@@ -1216,12 +1216,12 @@ Sin interfaz de librería: se nombran por el tipo que más usan.
 | `CommandSourceStackBridge_2` | `afg` | Utilidades sobre `Component`: 5 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `CommandSourceStackBridge_3` | `afi` | Utilidades sobre `Component`: 5 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `ConfigurationSectionBridge` | `bbg` | Utilidades sobre `PluginFileConfigurationHolder`: 98 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
-| `ConfigurationSectionBridge_2` | `mv` | Utilidades sobre `ItemStackBuilder_3`: 12 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
-| `ConfigurationSectionBridge_3` | `sp` | Utilidades sobre `ItemStackBuilder_3`: 9 métodos (9 estáticos). Sin interfaz de librería que la identifique. |
+| `ConfigurationSectionBridge_2` | `mv` | Utilidades sobre `ItemStackBuilder_4`: 12 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
+| `ConfigurationSectionBridge_3` | `sp` | Utilidades sobre `ItemStackBuilder_4`: 9 métodos (9 estáticos). Sin interfaz de librería que la identifique. |
 | `ConfigurationSectionBridge_4` | `sv` | Utilidades sobre `ItemStackRegistry`: 17 métodos (12 estáticos). Sin interfaz de librería que la identifique. |
 | `ConfigurationSectionBridge_5` | `td` | Utilidades sobre `ItemStackRegistry`: 3 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
-| `EffectBridge` | `oa` | Utilidades sobre `ItemStackBuilder_3`: 2 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `EntityBridge` | `aq` | Utilidades sobre `FluentBuilder`: 7 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `EffectBridge` | `oa` | Utilidades sobre `ItemStackBuilder_4`: 2 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `EntityBridge` | `aq` | Utilidades sobre `EntityBridgeBuilder`: 7 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `EntityBridge_2` | `bfb` | Utilidades sobre `DamageCause`: 0 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `EntityBridge_3` | `le` | Utilidades sobre `objetos internos`: 2 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `EntityBridge_4` | `uj` | Utilidades sobre `EndEnum`: 4 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
@@ -1254,24 +1254,24 @@ Sin interfaz de librería: se nombran por el tipo que más usan.
 | `EntityInsentientBridge_8` | `ald` | Utilidades sobre `BlockNms_1_21_3_24`: 4 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `EntityInsentientBridge_9` | `alf` | Utilidades sobre `BlockNms_1_21_4_24`: 4 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `EntityTypeBridge` | `hb` | Utilidades sobre `Predicate_2`: 2 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
-| `EntityTypeBridge_2` | `hf` | Utilidades sobre `EntityTypeBuilder_5`: 1 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
-| `EntityTypeBridge_3` | `id` | Utilidades sobre `FluentBuilder_35`: 3 métodos (3 estáticos). Sin interfaz de librería que la identifique. |
-| `EntityTypeBridge_4` | `jq` | Utilidades sobre `ItemStackBuilder_3`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `EntityTypeBridge_2` | `hf` | Utilidades sobre `EntityTypeBridgeBuilder_2`: 1 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
+| `EntityTypeBridge_3` | `id` | Utilidades sobre `EntityTypeBridgeBuilder_3`: 3 métodos (3 estáticos). Sin interfaz de librería que la identifique. |
+| `EntityTypeBridge_4` | `jq` | Utilidades sobre `ItemStackBuilder_4`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `EntityTypeBridge_5` | `tt` | Utilidades sobre `PluginFileConfigurationHolder`: 4 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `EntityTypeBridge_6` | `up` | Utilidades sobre `objetos internos`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `EnumWrappersHelper` | `ari` | Utilidades sobre `World`: 8 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `EventBridge` | `ba` | Utilidades sobre `LocationBuilder`: 10 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
-| `EventBridge_10` | `nx` | Utilidades sobre `ItemStackBuilder_3`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `EventBridge_11` | `om` | Utilidades sobre `ValueData_33`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `EventBridge_12` | `oq` | Utilidades sobre `ItemStackBuilder_3`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `EventBridge_2` | `bf` | Utilidades sobre `LocationBuilder`: 3 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
-| `EventBridge_3` | `bi` | Utilidades sobre `EntityTypeBuilder`: 4 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
-| `EventBridge_4` | `ng` | Utilidades sobre `ItemStackBuilder_3`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `EventBridge_5` | `nj` | Utilidades sobre `ItemStackBuilder_3`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `EventBridge_6` | `nk` | Utilidades sobre `ItemStackBuilder_3`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `EventBridge_7` | `nl` | Utilidades sobre `ItemStackBuilder_3`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `EventBridge_8` | `ns` | Utilidades sobre `ItemStackBuilder_3`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `EventBridge_9` | `nw` | Utilidades sobre `ItemStackBuilder_3`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `EventBridge` | `ba` | Utilidades sobre `LivingEntityBuilder`: 10 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
+| `EventBridge_10` | `nx` | Utilidades sobre `ItemStackBuilder_4`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `EventBridge_11` | `om` | Utilidades sobre `StringClassBoolData`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `EventBridge_12` | `oq` | Utilidades sobre `ItemStackBuilder_4`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `EventBridge_2` | `bf` | Utilidades sobre `LivingEntityBuilder`: 3 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
+| `EventBridge_3` | `bi` | Utilidades sobre `EventBridgeBuilder_3`: 4 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
+| `EventBridge_4` | `ng` | Utilidades sobre `ItemStackBuilder_4`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `EventBridge_5` | `nj` | Utilidades sobre `ItemStackBuilder_4`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `EventBridge_6` | `nk` | Utilidades sobre `ItemStackBuilder_4`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `EventBridge_7` | `nl` | Utilidades sobre `ItemStackBuilder_4`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `EventBridge_8` | `ns` | Utilidades sobre `ItemStackBuilder_4`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `EventBridge_9` | `nw` | Utilidades sobre `ItemStackBuilder_4`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `FeatureBridge` | `axc` | Utilidades sobre `FeaturePlaceContext`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `FeatureBridge_2` | `axe` | Utilidades sobre `FeaturePlaceContext`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `FeatureBridge_3` | `axg` | Utilidades sobre `FeaturePlaceContext`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
@@ -1281,45 +1281,45 @@ Sin interfaz de librería: se nombran por el tipo que más usan.
 | `ItemBridge` | `ue` | Utilidades sobre `Player`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `ItemsAdderLoadDataEventHelper` | `t` | Utilidades sobre `g`: 12 métodos (8 estáticos). Sin interfaz de librería que la identifique. |
 | `ItemStackBridge` | `baz` | Utilidades sobre `Generation`: 5 métodos (5 estáticos). Sin interfaz de librería que la identifique. |
-| `ItemStackBridge_10` | `ne` | Utilidades sobre `ItemStackBuilder_3`: 3 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `ItemStackBridge_11` | `nf` | Utilidades sobre `ItemStackBuilder_3`: 5 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `ItemStackBridge_12` | `nh` | Utilidades sobre `ItemStackBuilder_3`: 2 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `ItemStackBridge_13` | `nm` | Utilidades sobre `ItemStackBuilder_3`: 4 métodos (2 estáticos). Sin interfaz de librería que la identifique. |
-| `ItemStackBridge_14` | `nn` | Utilidades sobre `ItemStackBuilder_3`: 4 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `ItemStackBridge_15` | `no` | Utilidades sobre `ItemStackBuilder_3`: 6 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `ItemStackBridge_16` | `np` | Utilidades sobre `ItemStackBuilder_3`: 8 métodos (2 estáticos). Sin interfaz de librería que la identifique. |
-| `ItemStackBridge_17` | `nr` | Utilidades sobre `ItemStackBuilder_3`: 5 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `ItemStackBridge_18` | `nt` | Utilidades sobre `ItemStackBuilder_3`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `ItemStackBridge_19` | `nv` | Utilidades sobre `ItemStackBuilder_3`: 2 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `ItemStackBridge_2` | `bbs` | Utilidades sobre `ItemStackBuilder_3`: 96 métodos (96 estáticos). Sin interfaz de librería que la identifique. |
+| `ItemStackBridge_10` | `ne` | Utilidades sobre `ItemStackBuilder_4`: 3 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `ItemStackBridge_11` | `nf` | Utilidades sobre `ItemStackBuilder_4`: 5 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `ItemStackBridge_12` | `nh` | Utilidades sobre `ItemStackBuilder_4`: 2 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `ItemStackBridge_13` | `nm` | Utilidades sobre `ItemStackBuilder_4`: 4 métodos (2 estáticos). Sin interfaz de librería que la identifique. |
+| `ItemStackBridge_14` | `nn` | Utilidades sobre `ItemStackBuilder_4`: 4 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `ItemStackBridge_15` | `no` | Utilidades sobre `ItemStackBuilder_4`: 6 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `ItemStackBridge_16` | `np` | Utilidades sobre `ItemStackBuilder_4`: 8 métodos (2 estáticos). Sin interfaz de librería que la identifique. |
+| `ItemStackBridge_17` | `nr` | Utilidades sobre `ItemStackBuilder_4`: 5 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `ItemStackBridge_18` | `nt` | Utilidades sobre `ItemStackBuilder_4`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `ItemStackBridge_19` | `nv` | Utilidades sobre `ItemStackBuilder_4`: 2 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `ItemStackBridge_2` | `bbs` | Utilidades sobre `ItemStackBuilder_4`: 96 métodos (96 estáticos). Sin interfaz de librería que la identifique. |
 | `ItemStackBridge_20` | `nz` | Utilidades sobre `NamespacedKeyItemDisplayHolder`: 5 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `ItemStackBridge_21` | `og` | Utilidades sobre `ItemStackBuilder_3`: 4 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `ItemStackBridge_21` | `og` | Utilidades sobre `ItemStackBuilder_4`: 4 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `ItemStackBridge_22` | `oi` | Utilidades sobre `BlockBridge_11`: 5 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `ItemStackBridge_23` | `oj` | Utilidades sobre `NamespacedKeyItemDisplayHolder`: 4 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `ItemStackBridge_24` | `ok` | Utilidades sobre `ValueData_24`: 3 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `ItemStackBridge_25` | `ol` | Utilidades sobre `ItemStackBuilder_3`: 2 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `ItemStackBridge_26` | `on` | Utilidades sobre `BlockBuilder`: 5 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `ItemStackBridge_27` | `or` | Utilidades sobre `ItemStackBuilder_3`: 5 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `ItemStackBridge_28` | `os` | Utilidades sobre `ItemStackBuilder_3`: 5 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `ItemStackBridge_24` | `ok` | Utilidades sobre `RefData`: 3 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `ItemStackBridge_25` | `ol` | Utilidades sobre `ItemStackBuilder_4`: 2 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `ItemStackBridge_26` | `on` | Utilidades sobre `LocationBridgeBuilder_2`: 5 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `ItemStackBridge_27` | `or` | Utilidades sobre `ItemStackBuilder_4`: 5 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `ItemStackBridge_28` | `os` | Utilidades sobre `ItemStackBuilder_4`: 5 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `ItemStackBridge_29` | `pf` | Utilidades sobre `ItemStackRegistry`: 5 métodos (3 estáticos). Sin interfaz de librería que la identifique. |
 | `ItemStackBridge_3` | `bbv` | Utilidades sobre `Material`: 8 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `ItemStackBridge_30` | `po` | Utilidades sobre `ItemStackRegistry`: 7 métodos (5 estáticos). Sin interfaz de librería que la identifique. |
 | `ItemStackBridge_31` | `qv` | Utilidades sobre `objetos internos`: 10 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
-| `ItemStackBridge_32` | `ry` | Utilidades sobre `ItemStackBuilder_3`: 13 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
+| `ItemStackBridge_32` | `ry` | Utilidades sobre `ItemStackBuilder_4`: 13 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
 | `ItemStackBridge_33` | `tz` | Utilidades sobre `Material`: 2 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `ItemStackBridge_34` | `vb` | Utilidades sobre `PluginFileConfigurationHolder`: 4 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `ItemStackBridge_35` | `vk` | Utilidades sobre `PluginFileConfigurationHolder`: 19 métodos (2 estáticos). Sin interfaz de librería que la identifique. |
 | `ItemStackBridge_36` | `vo` | Utilidades sobre `objetos internos`: 0 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `ItemStackBridge_37` | `vp` | Utilidades sobre `objetos internos`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `ItemStackBridge_38` | `vq` | Utilidades sobre `ItemStackBuilder_3`: 2 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `ItemStackBridge_38` | `vq` | Utilidades sobre `ItemStackBuilder_4`: 2 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `ItemStackBridge_39` | `vr` | Utilidades sobre `objetos internos`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `ItemStackBridge_4` | `bio` | Utilidades sobre `InventoryType`: 40 métodos (10 estáticos). Sin interfaz de librería que la identifique. |
 | `ItemStackBridge_40` | `vx` | Utilidades sobre `Plugin`: 3 métodos (3 estáticos). Sin interfaz de librería que la identifique. |
 | `ItemStackBridge_41` | `wc` | Utilidades sobre `PluginFileConfigurationHolder`: 4 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `ItemStackBridge_42` | `zo` | Utilidades sobre `ItemStackRegistry`: 3 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
 | `ItemStackBridge_5` | `bit` | Utilidades sobre `ItemStackBridge_4`: 32 métodos (7 estáticos). Sin interfaz de librería que la identifique. |
-| `ItemStackBridge_6` | `kf` | Utilidades sobre `ItemStackBuilder_3`: 2 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `ItemStackBridge_7` | `kg` | Utilidades sobre `ItemStackBuilder_3`: 10 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `ItemStackBridge_6` | `kf` | Utilidades sobre `ItemStackBuilder_4`: 2 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `ItemStackBridge_7` | `kg` | Utilidades sobre `ItemStackBuilder_4`: 10 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `ItemStackBridge_8` | `l` | Utilidades sobre `objetos internos`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `ItemStackBridge_9` | `m` | Utilidades sobre `objetos internos`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `ListenerBridge` | `bev` | Utilidades sobre `DFunction`: 14 métodos (14 estáticos). Sin interfaz de librería que la identifique. |
@@ -1332,11 +1332,11 @@ Sin interfaz de librería: se nombran por el tipo que más usan.
 | `LivingEntityBridge_6` | `bbh` | Utilidades sobre `EntityType`: 9 métodos (9 estáticos). Sin interfaz de librería que la identifique. |
 | `LivingEntityBridge_7` | `gy` | Utilidades sobre `Loader`: 27 métodos (25 estáticos). Sin interfaz de librería que la identifique. |
 | `LivingEntityBridge_8` | `zt` | Utilidades sobre `objetos internos`: 1 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
-| `LocationBridge` | `bbk` | Utilidades sobre `FluentBuilder_23`: 20 métodos (19 estáticos). Sin interfaz de librería que la identifique. |
+| `LocationBridge` | `bbk` | Utilidades sobre `FluentBuilder_6`: 20 métodos (19 estáticos). Sin interfaz de librería que la identifique. |
 | `LocationBridge_10` | `eg` | Utilidades sobre `objetos internos`: 2 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `LocationBridge_11` | `ei` | Utilidades sobre `Opaque111`: 4 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `LocationBridge_12` | `fj` | Utilidades sobre `ENTITYBlockViewer`: 3 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
-| `LocationBridge_13` | `se` | Utilidades sobre `BlockBuilder`: 8 métodos (5 estáticos). Sin interfaz de librería que la identifique. |
+| `LocationBridge_13` | `se` | Utilidades sobre `LocationBridgeBuilder_2`: 8 métodos (5 estáticos). Sin interfaz de librería que la identifique. |
 | `LocationBridge_14` | `ug` | Utilidades sobre `ItemStackBridge_32`: 25 métodos (6 estáticos). Sin interfaz de librería que la identifique. |
 | `LocationBridge_2` | `bcc` | Utilidades sobre `VectorBridge_3`: 42 métodos (42 estáticos). Sin interfaz de librería que la identifique. |
 | `LocationBridge_3` | `bcv` | Utilidades sobre `SoundCategory`: 6 métodos (6 estáticos). Sin interfaz de librería que la identifique. |
@@ -1352,20 +1352,20 @@ Sin interfaz de librería: se nombran por el tipo que más usan.
 | `MaterialBridge_11` | `rp` | Utilidades sobre `objetos internos`: 5 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `MaterialBridge_12` | `rq` | Utilidades sobre `objetos internos`: 6 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `MaterialBridge_13` | `si` | Utilidades sobre `ConfigurationSectionBridge`: 5 métodos (5 estáticos). Sin interfaz de librería que la identifique. |
-| `MaterialBridge_14` | `sm` | Utilidades sobre `BlockBuilder`: 6 métodos (6 estáticos). Sin interfaz de librería que la identifique. |
+| `MaterialBridge_14` | `sm` | Utilidades sobre `LocationBridgeBuilder_2`: 6 métodos (6 estáticos). Sin interfaz de librería que la identifique. |
 | `MaterialBridge_15` | `sz` | Utilidades sobre `ConfigurationSectionBridge`: 4 métodos (4 estáticos). Sin interfaz de librería que la identifique. |
 | `MaterialBridge_16` | `tv` | Utilidades sobre `PluginFileConfigurationHolder`: 5 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `MaterialBridge_17` | `uo` | Utilidades sobre `objetos internos`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `MaterialBridge_18` | `ve` | Utilidades sobre `PluginFileConfigurationHolder`: 9 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `MaterialBridge_19` | `vs` | Utilidades sobre `ItemStack`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `MaterialBridge_2` | `azn` | Utilidades sobre `PluginContract_20`: 13 métodos (7 estáticos). Sin interfaz de librería que la identifique. |
-| `MaterialBridge_20` | `wt` | Utilidades sobre `BlockBuilder`: 8 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `MaterialBridge_20` | `wt` | Utilidades sobre `LocationBridgeBuilder_2`: 8 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `MaterialBridge_3` | `fa` | Utilidades sobre `RecordOfValue`: 20 métodos (8 estáticos). Sin interfaz de librería que la identifique. |
 | `MaterialBridge_4` | `n` | Utilidades sobre `ItemStack`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `MaterialBridge_5` | `ox` | Utilidades sobre `BlockBridge_13`: 3 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
-| `MaterialBridge_6` | `qj` | Utilidades sobre `ItemStackBuilder_3`: 8 métodos (3 estáticos). Sin interfaz de librería que la identifique. |
-| `MaterialBridge_7` | `qr` | Utilidades sobre `ItemStackBuilder_3`: 3 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `MaterialBridge_8` | `qs` | Utilidades sobre `ItemStackBuilder_3`: 5 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `MaterialBridge_6` | `qj` | Utilidades sobre `ItemStackBuilder_4`: 8 métodos (3 estáticos). Sin interfaz de librería que la identifique. |
+| `MaterialBridge_7` | `qr` | Utilidades sobre `ItemStackBuilder_4`: 3 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `MaterialBridge_8` | `qs` | Utilidades sobre `ItemStackBuilder_4`: 5 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `MaterialBridge_9` | `rb` | Utilidades sobre `PluginFileConfigurationHolder`: 7 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
 | `MinecraftKeyHelper` | `arf` | Utilidades sobre `Player`: 6 métodos (6 estáticos). Sin interfaz de librería que la identifique. |
 | `NamespacedKeyBridge` | `bcj` | Utilidades sobre `PersistentDataHolder`: 10 métodos (10 estáticos). Sin interfaz de librería que la identifique. |
@@ -1379,7 +1379,7 @@ Sin interfaz de librería: se nombran por el tipo que más usan.
 | `PacketEventHelper` | `ark` | Utilidades sobre `World`: 9 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `PacketTypeHelper` | `arj` | Utilidades sobre `World`: 6 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `PacketTypeHelper_2` | `arl` | Utilidades sobre `ItemStack`: 6 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `ParticleBridge` | `oc` | Utilidades sobre `ItemStackBuilder_3`: 2 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `ParticleBridge` | `oc` | Utilidades sobre `ItemStackBuilder_4`: 2 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `PathfinderMobBridge` | `amk` | Utilidades sobre `BlockNms_26_1_1_24`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `PathfinderMobBridge_2` | `amq` | Utilidades sobre `BlockNms_26_1_2_24`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `PathfinderMobBridge_3` | `amw` | Utilidades sobre `BlockNms_26_2_24`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
@@ -1394,17 +1394,17 @@ Sin interfaz de librería: se nombran por el tipo que más usan.
 | `PlayerBridge_13` | `ix` | Utilidades sobre `PotionEffectTypeBridge`: 3 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `PlayerBridge_14` | `ja` | Utilidades sobre `PlayerBridge_8`: 5 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `PlayerBridge_15` | `jg` | Utilidades sobre `WorldBridge_4`: 10 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `PlayerBridge_16` | `jn` | Utilidades sobre `ItemStackBuilder_3`: 19 métodos (15 estáticos). Sin interfaz de librería que la identifique. |
-| `PlayerBridge_17` | `jw` | Utilidades sobre `ItemStackBuilder_3`: 5 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `PlayerBridge_16` | `jn` | Utilidades sobre `ItemStackBuilder_4`: 19 métodos (15 estáticos). Sin interfaz de librería que la identifique. |
+| `PlayerBridge_17` | `jw` | Utilidades sobre `ItemStackBuilder_4`: 5 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `PlayerBridge_18` | `lq` | Utilidades sobre `objetos internos`: 3 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `PlayerBridge_19` | `mx` | Utilidades sobre `ItemStackBuilder_3`: 6 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
+| `PlayerBridge_19` | `mx` | Utilidades sobre `ItemStackBuilder_4`: 6 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
 | `PlayerBridge_2` | `bad` | Utilidades sobre `av`: 7 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `PlayerBridge_20` | `nu` | Utilidades sobre `MaterialBridge_5`: 4 métodos (3 estáticos). Sin interfaz de librería que la identifique. |
 | `PlayerBridge_21` | `o` | Utilidades sobre `objetos internos`: 2 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `PlayerBridge_22` | `oe` | Utilidades sobre `ItemStackBuilder_3`: 2 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `PlayerBridge_23` | `op` | Utilidades sobre `ItemStackBuilder_3`: 4 métodos (2 estáticos). Sin interfaz de librería que la identifique. |
+| `PlayerBridge_22` | `oe` | Utilidades sobre `ItemStackBuilder_4`: 2 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `PlayerBridge_23` | `op` | Utilidades sobre `ItemStackBuilder_4`: 4 métodos (2 estáticos). Sin interfaz de librería que la identifique. |
 | `PlayerBridge_24` | `qe` | Utilidades sobre `HandlerList`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `PlayerBridge_25` | `rk` | Utilidades sobre `ItemStackBuilder_3`: 13 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
+| `PlayerBridge_25` | `rk` | Utilidades sobre `ItemStackBuilder_4`: 13 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
 | `PlayerBridge_26` | `xj` | Utilidades sobre `PermissibleBridge`: 8 métodos (4 estáticos). Sin interfaz de librería que la identifique. |
 | `PlayerBridge_27` | `y` | Utilidades sobre `ItemStackRegistry`: 9 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `PlayerBridge_28` | `z` | Utilidades sobre `ItemStackRegistry`: 6 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
@@ -1416,15 +1416,15 @@ Sin interfaz de librería: se nombran por el tipo que más usan.
 | `PlayerBridge_33` | `zv` | Utilidades sobre `objetos internos`: 3 métodos (3 estáticos). Sin interfaz de librería que la identifique. |
 | `PlayerBridge_4` | `bcw` | Utilidades sobre `objetos internos`: 4 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `PlayerBridge_5` | `bl` | Utilidades sobre `ItemDisplay`: 3 métodos (3 estáticos). Sin interfaz de librería que la identifique. |
-| `PlayerBridge_6` | `ca` | Utilidades sobre `FluentBuilder_20`: 4 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
-| `PlayerBridge_7` | `do` | Utilidades sobre `LocationBuilder`: 9 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `PlayerBridge_6` | `ca` | Utilidades sobre `PlayerBridgeBuilder`: 4 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
+| `PlayerBridge_7` | `do` | Utilidades sobre `LivingEntityBuilder`: 9 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `PlayerBridge_8` | `ij` | Utilidades sobre `PlayerBridge_15`: 15 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `PlayerBridge_9` | `ip` | Utilidades sobre `PlayerBridge_8`: 3 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `PlayerFishEventBridge` | `pm` | Utilidades sobre `ItemStackRegistry`: 2 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
 | `PluginBridge` | `azy` | Utilidades sobre `av`: 0 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `PluginBridge_10` | `fv` | Utilidades sobre `ItemStackRegistry`: 20 métodos (2 estáticos). Sin interfaz de librería que la identifique. |
 | `PluginBridge_11` | `ih` | Utilidades sobre `ItemStackRegistry`: 4 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `PluginBridge_12` | `kl` | Utilidades sobre `ItemStackBuilder_3`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `PluginBridge_12` | `kl` | Utilidades sobre `ItemStackBuilder_4`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `PluginBridge_13` | `kr` | Utilidades sobre `ItemStackRegistry`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `PluginBridge_14` | `kw` | Utilidades sobre `ItemStackRegistry`: 2 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `PluginBridge_15` | `wi` | Utilidades sobre `Opaque145`: 30 métodos (12 estáticos). Sin interfaz de librería que la identifique. |
@@ -1436,14 +1436,14 @@ Sin interfaz de librería: se nombran por el tipo que más usan.
 | `PluginBridge_7` | `bbw` | Utilidades sobre `PluginFileConfigurationHolder`: 8 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `PluginBridge_8` | `bfr` | Utilidades sobre `objetos internos`: 14 métodos (5 estáticos). Sin interfaz de librería que la identifique. |
 | `PluginBridge_9` | `bip` | Utilidades sobre `Player`: 4 métodos (4 estáticos). Sin interfaz de librería que la identifique. |
-| `PotionEffectTypeBridge` | `of` | Utilidades sobre `ItemStackBuilder_3`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `PotionEffectTypeBridge_2` | `oh` | Utilidades sobre `ItemStackBuilder_3`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `PotionEffectTypeBridge` | `of` | Utilidades sobre `ItemStackBuilder_4`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `PotionEffectTypeBridge_2` | `oh` | Utilidades sobre `ItemStackBuilder_4`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `RecipeBridge` | `ux` | Utilidades sobre `NamespacedKeyItemStackHolder`: 58 métodos (36 estáticos). Sin interfaz de librería que la identifique. |
 | `SoundBridge` | `bcu` | Utilidades sobre `Player`: 3 métodos (3 estáticos). Sin interfaz de librería que la identifique. |
 | `SoundBridge_2` | `sg` | Utilidades sobre `Player`: 8 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `SoundCategoryBridge` | `bbi` | Utilidades sobre `ItemFlag`: 19 métodos (19 estáticos). Sin interfaz de librería que la identifique. |
-| `SoundCategoryBridge_2` | `dt` | Utilidades sobre `LocationBuilder`: 21 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `SoundCategoryBridge_3` | `od` | Utilidades sobre `ItemStackBuilder_3`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `SoundCategoryBridge_2` | `dt` | Utilidades sobre `LivingEntityBuilder`: 21 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `SoundCategoryBridge_3` | `od` | Utilidades sobre `ItemStackBuilder_4`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `TridentBridge` | `qa` | Utilidades sobre `ProjectileLaunchListener`: 2 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `VectorBridge` | `bcz` | Utilidades sobre `objetos internos`: 4 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `VectorBridge_2` | `bda` | Utilidades sobre `objetos internos`: 4 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
@@ -1453,19 +1453,19 @@ Sin interfaz de librería: se nombran por el tipo que más usan.
 | `VersionHelper_2` | `an` | Utilidades sobre `Material`: 31 métodos (6 estáticos). Sin interfaz de librería que la identifique. |
 | `VersionHelper_3` | `zw` | Utilidades sobre `ServerJarEnum`: 27 métodos (27 estáticos). Sin interfaz de librería que la identifique. |
 | `WorldBridge` | `bde` | Utilidades sobre `objetos internos`: 7 métodos (1 estáticos). Sin interfaz de librería que la identifique. |
-| `WorldBridge_10` | `wy` | Utilidades sobre `BlockBuilder`: 4 métodos (3 estáticos). Sin interfaz de librería que la identifique. |
-| `WorldBridge_11` | `wz` | Utilidades sobre `BlockBuilder`: 8 métodos (5 estáticos). Sin interfaz de librería que la identifique. |
+| `WorldBridge_10` | `wy` | Utilidades sobre `LocationBridgeBuilder_2`: 4 métodos (3 estáticos). Sin interfaz de librería que la identifique. |
+| `WorldBridge_11` | `wz` | Utilidades sobre `LocationBridgeBuilder_2`: 8 métodos (5 estáticos). Sin interfaz de librería que la identifique. |
 | `WorldBridge_12` | `xb` | Utilidades sobre `WorldBridge_9`: 7 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `WorldBridge_13` | `xc` | Utilidades sobre `WorldBridge_10`: 11 métodos (3 estáticos). Sin interfaz de librería que la identifique. |
 | `WorldBridge_14` | `xd` | Utilidades sobre `WorldBridge_11`: 10 métodos (2 estáticos). Sin interfaz de librería que la identifique. |
 | `WorldBridge_2` | `fm` | Utilidades sobre `WorldSaveListener`: 31 métodos (14 estáticos). Sin interfaz de librería que la identifique. |
-| `WorldBridge_3` | `fo` | Utilidades sobre `FluentBuilder_25`: 3 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
+| `WorldBridge_3` | `fo` | Utilidades sobre `RecordOfValueBuilder_2`: 3 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `WorldBridge_4` | `ii` | Utilidades sobre `PlayerBridge_15`: 19 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `WorldBridge_5` | `mj` | Utilidades sobre `BlockBridge_9`: 18 métodos (3 estáticos). Sin interfaz de librería que la identifique. |
 | `WorldBridge_6` | `tl` | Utilidades sobre `WorldBridge_7`: 13 métodos (13 estáticos). Sin interfaz de librería que la identifique. |
 | `WorldBridge_7` | `wu` | Utilidades sobre `MaterialBridge_20`: 7 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
-| `WorldBridge_8` | `wv` | Utilidades sobre `BlockBuilder`: 6 métodos (3 estáticos). Sin interfaz de librería que la identifique. |
-| `WorldBridge_9` | `ww` | Utilidades sobre `BlockBuilder`: 4 métodos (3 estáticos). Sin interfaz de librería que la identifique. |
+| `WorldBridge_8` | `wv` | Utilidades sobre `LocationBridgeBuilder_2`: 6 métodos (3 estáticos). Sin interfaz de librería que la identifique. |
+| `WorldBridge_9` | `ww` | Utilidades sobre `LocationBridgeBuilder_2`: 4 métodos (3 estáticos). Sin interfaz de librería que la identifique. |
 | `WorldGeneratorBridge` | `awi` | Utilidades sobre `FeaturePlaceContext`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `WorldGeneratorBridge_10` | `axa` | Utilidades sobre `FeaturePlaceContext`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
 | `WorldGeneratorBridge_2` | `awk` | Utilidades sobre `FeaturePlaceContext`: 1 métodos (0 estáticos). Sin interfaz de librería que la identifique. |
@@ -1490,14 +1490,14 @@ Nombradas a partir de un mensaje o clave de configuración propio; el texto no s
 | `ArmorsRendering` | `s` | Identificada por un mensaje o clave de configuración propio. 1 métodos, 0 campos; usa `PluginFileConfigurationHolder`, `ConfigurationSection`, `ColorBridge`, `CommandSenderBridge_5`. |
 | `Assets` | `b` | Identificada por un mensaje o clave de configuración propio. 11 métodos, 0 campos; usa `Main`, `Plugin`, `ColorBridge`. |
 | `AvgPacketsSent` | `aoy` | Identificada por un mensaje o clave de configuración propio. 5 métodos, 3 campos; usa `Bukkit`, `Main`, `BukkitScheduler`. |
-| `Behaviours` | `mu` | Identificada por un mensaje o clave de configuración propio. 15 métodos, 2 campos; usa `ItemStackBuilder_3`, `ConfigurationSectionBridge`, `ItemStackRegistry`, `CommandSenderBridge_5`. |
+| `Behaviours` | `mu` | Identificada por un mensaje o clave de configuración propio. 15 métodos, 2 campos; usa `ItemStackBuilder_4`, `ConfigurationSectionBridge`, `ItemStackRegistry`, `CommandSenderBridge_5`. |
 | `BufferCapacityEnough` | `bkf` | Identificada por un mensaje o clave de configuración propio. 43 métodos, 2 campos; usa `Opaque105`, `Opaque103`, `Opaque102`. |
 | `BufferLocked` | `bdv` | Identificada por un mensaje o clave de configuración propio. 3 métodos, 2 campos; usa `Opaque034`, `Opaque031`, `Opaque030`. |
-| `BufferPreviouslyUsed` | `bkc` | Identificada por un mensaje o clave de configuración propio. 20 métodos, 1 campos; usa `FluentBuilder_15`, `Opaque097`, `FluentBuilder_17`. |
-| `BufferPreviouslyUsed_2` | `bkh` | Identificada por un mensaje o clave de configuración propio. 20 métodos, 1 campos; usa `FluentBuilder_15`, `Opaque099`, `FluentBuilder_17`. |
-| `ChunkStreamSomehow` | `bds` | Identificada por un mensaje o clave de configuración propio. 17 métodos, 13 campos; usa `Opaque030`, `Opaque031`, `ValueData_9`. |
+| `BufferPreviouslyUsed` | `bkc` | Identificada por un mensaje o clave de configuración propio. 20 métodos, 1 campos; usa `FluentBuilderBuilder`, `Opaque097`, `FluentBuilderBuilder_2`. |
+| `BufferPreviouslyUsed_2` | `bkh` | Identificada por un mensaje o clave de configuración propio. 20 métodos, 1 campos; usa `FluentBuilderBuilder`, `Opaque099`, `FluentBuilderBuilder_2`. |
+| `ChunkStreamSomehow` | `bds` | Identificada por un mensaje o clave de configuración propio. 17 métodos, 13 campos; usa `Opaque030`, `Opaque031`, `IntData_2`. |
 | `CodedInputEncounteredEmbedded` | `bkb` | Identificada por un mensaje o clave de configuración propio. 10 métodos, 2 campos; usa `IOError`. |
-| `ComponentsNbtFile` | `tb` | Identificada por un mensaje o clave de configuración propio. 4 métodos, 0 campos; usa `ConfigurationSectionBridge`, `ItemStackBuilder_3`, `PluginFileConfigurationHolder`, `CommandSenderBridge_5`. |
+| `ComponentsNbtFile` | `tb` | Identificada por un mensaje o clave de configuración propio. 4 métodos, 0 campos; usa `ConfigurationSectionBridge`, `ItemStackBuilder_4`, `PluginFileConfigurationHolder`, `CommandSenderBridge_5`. |
 | `Consumable` | `sj` | Identificada por un mensaje o clave de configuración propio. 5 métodos, 1 campos; usa `ConfigurationSectionBridge`, `PluginFileConfigurationHolder`, `CommandSenderBridge_5`, `RecordOfPotionEffectType`. |
 | `Count` | `ajf` | Identificada por un mensaje o clave de configuración propio. 17 métodos, 5 campos; usa `DataConverterSchemaNamed`. |
 | `Count_10` | `ajx` | Identificada por un mensaje o clave de configuración propio. 17 métodos, 5 campos; usa `DataConverterSchemaNamed`. |
@@ -1515,7 +1515,7 @@ Nombradas a partir de un mensaje o clave de configuración propio; el texto no s
 | `Crops` | `sk` | Identificada por un mensaje o clave de configuración propio. 8 métodos, 4 campos; usa `ItemStackRegistry`, `PluginFileConfigurationHolder`, `ConfigurationSectionBridge`. |
 | `CustomItemNull` | `ayz` | Identificada por un mensaje o clave de configuración propio. 4 métodos, 1 campos; usa `MaterialBridge_10`, `ItemStackBridge_2`, `Model`. |
 | `Dictionary` | `c` | Identificada por un mensaje o clave de configuración propio. 2 métodos, 0 campos; usa `PluginFileConfigurationHolder`, `CommandSenderBridge_5`, `ConfigurationSection`, `Opaque109`. |
-| `Durability` | `so` | Identificada por un mensaje o clave de configuración propio. 2 métodos, 0 campos; usa `ConfigurationSectionBridge`, `ItemStackBuilder_3`, `Material`, `ItemStackBridge_2`. |
+| `Durability` | `so` | Identificada por un mensaje o clave de configuración propio. 2 métodos, 0 campos; usa `ConfigurationSectionBridge`, `ItemStackBuilder_4`, `Material`, `ItemStackBridge_2`. |
 | `Enabled` | `ts` | Identificada por un mensaje o clave de configuración propio. 4 métodos, 2 campos; usa `ResourceGraphics`, `PluginFileConfigurationHolder`, `ConfigurationSectionBridge`. |
 | `ENTITYBlockViewer` | `fl` | Identificada por un mensaje o clave de configuración propio. 26 métodos, 24 campos; usa tipos internos. |
 | `Equipments` | `g` | Identificada por un mensaje o clave de configuración propio. 3 métodos, 1 campos; usa `PluginFileConfigurationHolder`, `ConfigurationSection`, `CommandSenderBridge_5`, `NamespacedKey`. |
@@ -1525,7 +1525,7 @@ Nombradas a partir de un mensaje o clave de configuración propio; el texto no s
 | `Found` | `aze` | Identificada por un mensaje o clave de configuración propio. 23 métodos, 6 campos; usa `ColorBridge_2`, `PluginFileConfigurationHolder`, `CommandSenderBridge_5`. |
 | `Generated` | `ayo` | Identificada por un mensaje o clave de configuración propio. 6 métodos, 5 campos; usa `MaterialBridge_10`, `e`, `c`. |
 | `GetPacketID` | `aox` | Identificada por un mensaje o clave de configuración propio. 2 métodos, 2 campos; usa `PacketListenerRegistry`, `PlayerWrapper_4`. |
-| `Happen` | `biu` | Identificada por un mensaje o clave de configuración propio. 19 métodos, 4 campos; usa `FluentBuilder_19`, `Opaque105`. |
+| `Happen` | `biu` | Identificada por un mensaje o clave de configuración propio. 19 métodos, 4 campos; usa `FluentBuilder_5`, `Opaque105`. |
 | `HideFlags` | `aje` | Identificada por un mensaje o clave de configuración propio. 56 métodos, 5 campos; usa `Count`, `ComponentDataFixUtils`, `BannerPatternFormatFix`. |
 | `HideFlags_10` | `ajw` | Identificada por un mensaje o clave de configuración propio. 56 métodos, 5 campos; usa `Count_10`, `LegacyComponentDataFixUtils`, `ExtraDataFixUtils`. |
 | `HideFlags_11` | `ajy` | Identificada por un mensaje o clave de configuración propio. 56 métodos, 5 campos; usa `Count_11`, `LegacyComponentDataFixUtils`, `ExtraDataFixUtils`. |
@@ -1541,7 +1541,7 @@ Nombradas a partir de un mensaje o clave de configuración propio; el texto no s
 | `HideFlags_9` | `aju` | Identificada por un mensaje o clave de configuración propio. 56 métodos, 5 campos; usa `Count_9`, `LegacyComponentDataFixUtils`, `ExtraDataFixUtils`. |
 | `Hitbox` | `ec` | Identificada por un mensaje o clave de configuración propio. 22 métodos, 11 campos; usa `Opaque140`, `c`, `SmoothEnum`, `InstanceRegistry_10`. |
 | `Implemented` | `beb` | Identificada por un mensaje o clave de configuración propio. 11 métodos, 1 campos; usa tipos internos. |
-| `Implemented_2` | `bec` | Identificada por un mensaje o clave de configuración propio. 47 métodos, 13 campos; usa `FluentBuilder_12`, `InstanceHolder_6`. |
+| `Implemented_2` | `bec` | Identificada por un mensaje o clave de configuración propio. 47 métodos, 13 campos; usa `InstanceHolderBuilder`, `InstanceHolder_6`. |
 | `InfoNamespace` | `sq` | Identificada por un mensaje o clave de configuración propio. 1 métodos, 1 campos; usa `ItemStackRegistry`, `PluginFileConfigurationHolder`, `ConfigurationSectionBridge`, `CommandSenderBridge_5`. |
 | `InfoNamespace_2` | `sr` | Identificada por un mensaje o clave de configuración propio. 2 métodos, 1 campos; usa `CreatureSpawnListener`, `ItemStackRegistry`, `PluginFileConfigurationHolder`, `CommandSenderBridge_5`. |
 | `InfoNamespace_3` | `te` | Identificada por un mensaje o clave de configuración propio. 3 métodos, 2 campos; usa `ItemStackRegistry`, `PluginFileConfigurationHolder`, `CommandSenderBridge_5`. |
@@ -1555,7 +1555,7 @@ Nombradas a partir de un mensaje o clave de configuración propio; el texto no s
 | `LastModified` | `tf` | Identificada por un mensaje o clave de configuración propio. 16 métodos, 3 campos; usa `Main`, `PluginFileConfigurationHolder`, `CommandSenderBridge_5`. |
 | `Minecraft` | `ayp` | Identificada por un mensaje o clave de configuración propio. 1 métodos, 3 campos; usa tipos internos. |
 | `Minecraft_2` | `ayr` | Identificada por un mensaje o clave de configuración propio. 9 métodos, 0 campos; usa `Generated`, `MaterialBridge_12`, `MaterialBridge_11`. |
-| `Minecraft_3` | `azj` | Identificada por un mensaje o clave de configuración propio. 1 métodos, 2 campos; usa `MaterialBridge_8`, `ItemStackRegistry`, `ItemStackBuilder_3`, `CommandSenderBridge_5`. |
+| `Minecraft_3` | `azj` | Identificada por un mensaje o clave de configuración propio. 1 métodos, 2 campos; usa `MaterialBridge_8`, `ItemStackRegistry`, `ItemStackBuilder_4`, `CommandSenderBridge_5`. |
 | `Minecraft_4` | `azt` | Identificada por un mensaje o clave de configuración propio. 9 métodos, 0 campos; usa `ItemStackRegistry`, `c`, `ColorBridge`. |
 | `Model` | `ays` | Identificada por un mensaje o clave de configuración propio. 1 métodos, 0 campos; usa `Parent`, `d`, `MaterialBridge_10`, `ItemStackBridge_2`. |
 | `Model_2` | `ayt` | Identificada por un mensaje o clave de configuración propio. 3 métodos, 0 campos; usa `Minecraft_2`, `MaterialBridge_10`, `d`. |
@@ -1563,7 +1563,7 @@ Nombradas a partir de un mensaje o clave de configuración propio; el texto no s
 | `Model_4` | `azb` | Identificada por un mensaje o clave de configuración propio. 2 métodos, 0 campos; usa `Minecraft_2`, `MaterialBridge_10`, `d`. |
 | `Model_5` | `azd` | Identificada por un mensaje o clave de configuración propio. 3 métodos, 0 campos; usa `Minecraft_2`, `MaterialBridge_10`, `d`. |
 | `Normal` | `azc` | Identificada por un mensaje o clave de configuración propio. 7 métodos, 0 campos; usa `Minecraft_2`, `MaterialBridge_12`, `MaterialBridge_10`, `e`. |
-| `North` | `azk` | Identificada por un mensaje o clave de configuración propio. 5 métodos, 6 campos; usa `e`, `Material`, `ItemStackBuilder_3`. |
+| `North` | `azk` | Identificada por un mensaje o clave de configuración propio. 5 métodos, 6 campos; usa `e`, `Material`, `ItemStackBuilder_4`. |
 | `OpenBack` | `ayu` | Identificada por un mensaje o clave de configuración propio. 6 métodos, 0 campos; usa `Minecraft_2`, `Minecraft`, `MaterialBridge_10`. |
 | `OPTIONS` | `bam` | Identificada por un mensaje o clave de configuración propio. 5 métodos, 0 campos; usa `RecordOfFullHttpRequest`, `RecordOfChannelHandlerContext`, `PluginContract_2`, `ItemsadderHttpPacket`. |
 | `OutputNull` | `bbo` | Identificada por un mensaje o clave de configuración propio. 3 métodos, 0 campos; usa tipos internos. |
@@ -1576,14 +1576,14 @@ Nombradas a partir de un mensaje o clave de configuración propio; el texto no s
 | `ResourceGraphics_2` | `tw` | Identificada por un mensaje o clave de configuración propio. 6 métodos, 1 campos; usa `PluginContractImpl_8`, `ConfigurationSectionBridge`, `Error_3`, `Material`. |
 | `ResourcePackCustom` | `azm` | Identificada por un mensaje o clave de configuración propio. 6 métodos, 3 campos; usa `b`, `PluginFileConfigurationHolder`, `CommandSenderBridge_5`. |
 | `SecretYml` | `ah` | Identificada por un mensaje o clave de configuración propio. 1 métodos, 1 campos; usa `PluginFileConfigurationHolder`, `Main`. |
-| `SpecificPropertiesPotion` | `tc` | Identificada por un mensaje o clave de configuración propio. 2 métodos, 0 campos; usa `ItemStackBuilder_3`, `ConfigurationSectionBridge`, `PluginFileConfigurationHolder`, `CommandSenderBridge_5`. |
+| `SpecificPropertiesPotion` | `tc` | Identificada por un mensaje o clave de configuración propio. 2 métodos, 0 campos; usa `ItemStackBuilder_4`, `ConfigurationSectionBridge`, `PluginFileConfigurationHolder`, `CommandSenderBridge_5`. |
 | `TestPassed` | `ov` | Identificada por un mensaje o clave de configuración propio. 14 métodos, 2 campos; usa tipos internos. |
 | `Textures` | `ayw` | Identificada por un mensaje o clave de configuración propio. 2 métodos, 0 campos; usa `c`. |
 | `TriedLoadUnrecognized` | `ash` | Identificada por un mensaje o clave de configuración propio. 14 métodos, 1 campos; usa tipos internos. |
-| `Truncated` | `bjh` | Identificada por un mensaje o clave de configuración propio. 16 métodos, 0 campos; usa `FluentBuilder_15`, `Opaque089`, `PluginContract_14`. |
-| `Truncated_2` | `bjl` | Identificada por un mensaje o clave de configuración propio. 9 métodos, 0 campos; usa `FluentBuilder_15`, `PluginContract_14`, `CodedInputEncounteredEmbedded`, `FluentBuilder_17`. |
-| `UTF8` | `bjt` | Identificada por un mensaje o clave de configuración propio. 20 métodos, 1 campos; usa `FluentBuilder_18`, `Opaque103`, `BufferCapacityEnough`. |
-| `UTF8_2` | `bju` | Identificada por un mensaje o clave de configuración propio. 20 métodos, 1 campos; usa `FluentBuilder_18`, `Opaque103`, `BufferCapacityEnough`. |
+| `Truncated` | `bjh` | Identificada por un mensaje o clave de configuración propio. 16 métodos, 0 campos; usa `FluentBuilderBuilder`, `Opaque089`, `PluginContract_14`. |
+| `Truncated_2` | `bjl` | Identificada por un mensaje o clave de configuración propio. 9 métodos, 0 campos; usa `FluentBuilderBuilder`, `PluginContract_14`, `CodedInputEncounteredEmbedded`, `FluentBuilderBuilder_2`. |
+| `UTF8` | `bjt` | Identificada por un mensaje o clave de configuración propio. 20 métodos, 1 campos; usa `FluentBuilder_4`, `Opaque103`, `BufferCapacityEnough`. |
+| `UTF8_2` | `bju` | Identificada por un mensaje o clave de configuración propio. 20 métodos, 1 campos; usa `FluentBuilder_4`, `Opaque103`, `BufferCapacityEnough`. |
 | `UTF8_3` | `bkt` | Identificada por un mensaje o clave de configuración propio. 5 métodos, 1 campos; usa `Opaque102`. |
 | `While` | `azs` | Identificada por un mensaje o clave de configuración propio. 5 métodos, 3 campos; usa tipos internos. |
 | `Worlds` | `zs` | Identificada por un mensaje o clave de configuración propio. 6 métodos, 13 campos; usa `ChunkBridge_3`, `WorldBridge_8`, `PluginBridge_7`. |
@@ -1710,7 +1710,7 @@ Sin cadenas, sin tipos de librería y sin interfaz: no hay evidencia para un nom
 | `Opaque007` | `aos` | Sin ancla semántica: 3 campos, 2 métodos. Usa `PlayerWrapper_4`. |
 | `Opaque008` | `awd` | Sin ancla semántica: 1 campos, 4 métodos. Usa `RecordOfObject`, `ReplaceFunction`. |
 | `Opaque009` | `azf` | Sin ancla semántica: 2 campos, 3 métodos. Usa tipos internos. |
-| `Opaque010` | `bah` | Sin ancla semántica: 5 campos, 1 métodos. Usa `ValueData_8`, `CommandSenderBridge_5`. |
+| `Opaque010` | `bah` | Sin ancla semántica: 5 campos, 1 métodos. Usa `IntLongData`, `CommandSenderBridge_5`. |
 | `Opaque011` | `bb` | Sin ancla semántica: 0 campos, 1 métodos. Usa `Opaque001`, `IFunction`. |
 | `Opaque012` | `bba` | Sin ancla semántica: 1 campos, 1 métodos. Usa tipos internos. |
 | `Opaque013` | `bbd` | Sin ancla semántica: 6 campos, 6 métodos. Usa `Bukkit`, `ChatColor`. |
@@ -1718,7 +1718,7 @@ Sin cadenas, sin tipos de librería y sin interfaz: no hay evidencia para un nom
 | `Opaque015` | `bbm` | Sin ancla semántica: 4 campos, 4 métodos. Usa `Bukkit`. |
 | `Opaque016` | `bbn` | Sin ancla semántica: 0 campos, 1 métodos. Usa `CommandSenderBridge_5`. |
 | `Opaque017` | `bbp` | Sin ancla semántica: 0 campos, 2 métodos. Usa tipos internos. |
-| `Opaque018` | `bbx` | Sin ancla semántica: 0 campos, 13 métodos. Usa `Opaque019`, `FluentBuilder_10`. |
+| `Opaque018` | `bbx` | Sin ancla semántica: 0 campos, 13 métodos. Usa `Opaque019`, `FluentBuilder`. |
 | `Opaque019` | `bca` | Sin ancla semántica: 6 campos, 4 métodos. Usa tipos internos. |
 | `Opaque020` | `bch` | Sin ancla semántica: 1 campos, 4 métodos. Usa tipos internos. |
 | `Opaque021` | `bci` | Sin ancla semántica: 2 campos, 1 métodos. Usa tipos internos. |
@@ -1730,7 +1730,7 @@ Sin cadenas, sin tipos de librería y sin interfaz: no hay evidencia para un nom
 | `Opaque027` | `bdc` | Sin ancla semántica: 0 campos, 3 métodos. Usa `Bukkit`, `PluginManager`, `Plugin`, `PluginDescriptionFile`. |
 | `Opaque028` | `bdq` | Sin ancla semántica: 3 campos, 7 métodos. Usa tipos internos. |
 | `Opaque029` | `bdr` | Sin ancla semántica: 1 campos, 3 métodos. Usa `Opaque028`. |
-| `Opaque030` | `bdu` | Sin ancla semántica: 2 campos, 5 métodos. Usa `ValueData_9`, `BufferLocked`. |
+| `Opaque030` | `bdu` | Sin ancla semántica: 2 campos, 5 métodos. Usa `IntData_2`, `BufferLocked`. |
 | `Opaque031` | `bdx` | Sin ancla semántica: 0 campos, 8 métodos. Usa `Opaque034`. |
 | `Opaque032` | `bdy` | Sin ancla semántica: 0 campos, 2 métodos. Usa tipos internos. |
 | `Opaque033` | `bdz` | Sin ancla semántica: 1 campos, 1 métodos. Usa tipos internos. |
@@ -1789,8 +1789,8 @@ Sin cadenas, sin tipos de librería y sin interfaz: no hay evidencia para un nom
 | `Opaque086` | `bij` | Sin ancla semántica: 1 campos, 1 métodos. Usa tipos internos. |
 | `Opaque087` | `bik` | Sin ancla semántica: 1 campos, 2 métodos. Usa `Opaque088`. |
 | `Opaque088` | `bil` | Sin ancla semántica: 1 campos, 1 métodos. Usa tipos internos. |
-| `Opaque089` | `bjf` | Sin ancla semántica: 5 campos, 14 métodos. Usa `PluginContractImpl_3`, `FluentBuilder_15`, `Opaque103`, `PluginContract_14`. |
-| `Opaque090` | `bjg` | Sin ancla semántica: 5 campos, 14 métodos. Usa `PluginContractImpl_3`, `FluentBuilder_17`, `Opaque103`, `PluginContract_14`. |
+| `Opaque089` | `bjf` | Sin ancla semántica: 5 campos, 14 métodos. Usa `PluginContractImpl_3`, `FluentBuilderBuilder`, `Opaque103`, `PluginContract_14`. |
+| `Opaque090` | `bjg` | Sin ancla semántica: 5 campos, 14 métodos. Usa `PluginContractImpl_3`, `FluentBuilderBuilder_2`, `Opaque103`, `PluginContract_14`. |
 | `Opaque091` | `bjj` | Sin ancla semántica: 2 campos, 1 métodos. Usa `PluginContractImpl_4`, `ExpectedMaxSizeNegative`, `PluginContractImpl_6`, `Opaque103`. |
 | `Opaque092` | `bjn` | Sin ancla semántica: 0 campos, 9 métodos. Usa tipos internos. |
 | `Opaque093` | `bjo` | Sin ancla semántica: 1 campos, 5 métodos. Usa tipos internos. |
@@ -1802,20 +1802,20 @@ Sin cadenas, sin tipos de librería y sin interfaz: no hay evidencia para un nom
 | `Opaque099` | `bki` | Sin ancla semántica: 2 campos, 2 métodos. Usa `Opaque096`. |
 | `Opaque100` | `bkj` | Sin ancla semántica: 2 campos, 2 métodos. Usa `Opaque096`. |
 | `Opaque101` | `bkr` | Sin ancla semántica: 1 campos, 12 métodos. Usa `Opaque105`, `Opaque102`. |
-| `Opaque102` | `bks` | Sin ancla semántica: 14 campos, 21 métodos. Usa `FluentBuilder_19`. |
+| `Opaque102` | `bks` | Sin ancla semántica: 14 campos, 21 métodos. Usa `FluentBuilder_5`. |
 | `Opaque103` | `bkx` | Sin ancla semántica: 17 campos, 3 métodos. Usa tipos internos. |
 | `Opaque104` | `bky` | Sin ancla semántica: 0 campos, 0 métodos. Usa tipos internos. |
-| `Opaque105` | `blf` | Sin ancla semántica: 8 campos, 7 métodos. Usa `FluentBuilder_19`, `PluginContract_16`. |
+| `Opaque105` | `blf` | Sin ancla semántica: 8 campos, 7 métodos. Usa `FluentBuilder_5`, `PluginContract_16`. |
 | `Opaque106` | `cn` | Sin ancla semántica: 2 campos, 1 métodos. Usa tipos internos. |
 | `Opaque107` | `cu` | Sin ancla semántica: 3 campos, 1 métodos. Usa `BukkitRunnable`, `PlayerInteractListener`, `Chunk`. |
 | `Opaque108` | `cx` | Sin ancla semántica: 2 campos, 2 métodos. Usa `PluginBridge_6`, `ColorBridge`. |
 | `Opaque109` | `cy` | Sin ancla semántica: 2 campos, 8 métodos. Usa `PluginBridge_6`, `Opaque108`, `CommandSenderBridge_5`. |
 | `Opaque110` | `dh` | Sin ancla semántica: 3 campos, 2 métodos. Usa tipos internos. |
-| `Opaque111` | `ea` | Sin ancla semántica: 3 campos, 2 métodos. Usa `ValueData_13`. |
-| `Opaque112` | `eh` | Sin ancla semántica: 14 campos, 23 métodos. Usa `LocationBuilder`, `LocationBridge_11`, `LocationEquipmentSlotHolder`. |
+| `Opaque111` | `ea` | Sin ancla semántica: 3 campos, 2 métodos. Usa `RefIntegerData`. |
+| `Opaque112` | `eh` | Sin ancla semántica: 14 campos, 23 métodos. Usa `LivingEntityBuilder`, `LocationBridge_11`, `LocationEquipmentSlotHolder`. |
 | `Opaque113` | `el` | Sin ancla semántica: 3 campos, 2 métodos. Usa `Bukkit`, `Main`, `BukkitScheduler`. |
 | `Opaque114` | `ex` | Sin ancla semántica: 1 campos, 3 métodos. Usa tipos internos. |
-| `Opaque115` | `ey` | Sin ancla semántica: 1 campos, 5 métodos. Usa `ENTITYBlockViewer`, `InstanceHolder_9`, `FluentBuilder_24`, `FluentBuilder_25`. |
+| `Opaque115` | `ey` | Sin ancla semántica: 1 campos, 5 métodos. Usa `ENTITYBlockViewer`, `InstanceHolder_9`, `Builder_5`, `RecordOfValueBuilder_2`. |
 | `Opaque116` | `ez` | Sin ancla semántica: 0 campos, 6 métodos. Usa tipos internos. |
 | `Opaque117` | `f` | Sin ancla semántica: 2 campos, 8 métodos. Usa `Opaque028`, `ChatColor`, `CommandSenderBridge_5`. |
 | `Opaque118` | `ff` | Sin ancla semántica: 2 campos, 6 métodos. Usa `RecordOfValue_16`. |
@@ -1831,7 +1831,7 @@ Sin cadenas, sin tipos de librería y sin interfaz: no hay evidencia para un nom
 | `Opaque128` | `pk` | Sin ancla semántica: 1 campos, 5 métodos. Usa `Opaque129`. |
 | `Opaque129` | `pl` | Sin ancla semántica: 4 campos, 1 métodos. Usa tipos internos. |
 | `Opaque130` | `qu` | Sin ancla semántica: 3 campos, 1 métodos. Usa `PluginBridge_6`. |
-| `Opaque131` | `rr` | Sin ancla semántica: 2 campos, 3 métodos. Usa `FluentBuilder_37`. |
+| `Opaque131` | `rr` | Sin ancla semántica: 2 campos, 3 métodos. Usa `Builder_15`. |
 | `Opaque132` | `rv` | Sin ancla semántica: 0 campos, 1 métodos. Usa `Opaque001`, `IFunction`. |
 | `Opaque133` | `sh` | Sin ancla semántica: 1 campos, 2 métodos. Usa `Opaque140`, `BiomeHolder`, `BlockWrapper_2`. |
 | `Opaque134` | `tk` | Sin ancla semántica: 0 campos, 6 métodos. Usa `Color`. |
