@@ -50,9 +50,13 @@ public class Deobf {
 
         // ---- Pass 2: build rename map ----
         Map<String, ClassInfo> info = new LinkedHashMap<>();
+        Map<String, Integer> subclasses = new HashMap<>();
+        for (ClassNode cn : classes.values()) {
+            if (cn.superName != null) subclasses.merge(cn.superName, 1, Integer::sum);
+        }
         for (String name : classes.keySet()) {
             if (name.startsWith(OBF_PKG) && !name.substring(OBF_PKG.length()).contains("$")) {
-                info.put(name, analyze(classes, classes.get(name)));
+                info.put(name, analyze(classes, classes.get(name), subclasses.getOrDefault(name, 0)));
             }
         }
         System.out.println("obfuscated top-level classes: " + info.size());
@@ -292,7 +296,7 @@ public class Deobf {
         int access;
     }
 
-    static ClassInfo analyze(Map<String, ClassNode> all, ClassNode cn) {
+    static ClassInfo analyze(Map<String, ClassNode> all, ClassNode cn, int subclasses) {
         ClassInfo ci = new ClassInfo();
         ci.name = cn.name;
         ci.superName = cn.superName;
@@ -319,17 +323,22 @@ public class Deobf {
             String simple = ev.substring(ev.lastIndexOf('/') + 1);
             if (simple.endsWith("Event")) simple = simple.substring(0, simple.length() - 5);
             ci.kind = "listener";
-            ci.evidence = "@EventHandler " + String.join(",", events.stream().map(s -> s.substring(s.lastIndexOf('/') + 1)).toList());
-            ci.candidate = pascal(simple) + "Listener";
+            ci.evidence = "@EventHandler " + String.join(",", events.stream().map(s -> s.substring(s.lastIndexOf('/') + 1)).toList())
+                    + (subclasses > 0 ? ", extended by " + subclasses : "");
+            // A listener many classes extend is the shared base, not the specific handler.
+            ci.candidate = pascal(simple) + (subclasses >= 3 ? "ListenerBase" : "Listener");
             return ci;
         }
 
         // PacketAdapter
         if (isSubclassOf(all, cn, "com/comphenix/protocol/events/PacketAdapter")) {
             ci.kind = "packet";
-            ci.evidence = "extends PacketAdapter";
+            String pkt = packetTypeOf(cn);
+            ci.evidence = "extends PacketAdapter" + (pkt == null ? "" : " on " + pkt);
             String msg = firstMeaningfulString(cn);
-            ci.candidate = msg != null ? pascal(stripStopwords(msg)) + "PacketListener" : "PacketListener";
+            String base = pkt != null ? pascal(pkt.toLowerCase(Locale.ROOT)) + "Packet"
+                    : (msg != null ? pascal(stripStopwords(msg)) : "Packet");
+            ci.candidate = base + "Listener";
             return ci;
         }
 
@@ -341,8 +350,16 @@ public class Deobf {
                     .flatMap(m -> stringsOf(m).stream())
                     .filter(s -> s.startsWith("/") && s.length() > 2 && s.length() < 40)
                     .findFirst().orElse(null);
-            ci.evidence = "onCommand" + (usage != null ? " usage=" + usage : "");
-            ci.candidate = (usage != null ? pascal(usage.substring(1).split(" ")[0]) : "Command") + "Command";
+            String label = null;
+            if (usage != null) {
+                label = usage.substring(1).split(" ")[0];
+            } else {
+                // No usage string: take the first literal that looks like a subcommand name.
+                String s = firstMeaningfulString(cn);
+                if (s != null && s.matches("[a-zA-Z][a-zA-Z0-9_]{2,20}")) label = s;
+            }
+            ci.evidence = "onCommand" + (label != null ? " label=" + label : "");
+            ci.candidate = (label != null ? pascal(label) : "Plugin") + "Command";
             return ci;
         }
 
@@ -422,6 +439,53 @@ public class Deobf {
             return ci;
         }
 
+        // Non-SAM interface: name it after the domain it abstracts
+        if ((cn.access & Opcodes.ACC_INTERFACE) != 0) {
+            String dom = dominantType(cn);
+            long real = cn.methods.stream().filter(m -> !m.name.startsWith("<")).count();
+            ci.kind = "interface";
+            ci.evidence = real + " methods" + (dom == null ? "" : ", dominant " + dom);
+            ci.candidate = (dom == null ? "Plugin" : pascal(dom)) + (hasBukkitSignature(cn) ? "Wrapper" : "Contract");
+            return ci;
+        }
+
+        // Fluent builder: several one-argument methods returning its own type
+        int fluent = 0;
+        for (MethodNode m : cn.methods) {
+            if (m.name.startsWith("<")) continue;
+            if (Type.getArgumentTypes(m.desc).length >= 1
+                    && Type.getReturnType(m.desc).getDescriptor().equals("L" + cn.name + ";")) fluent++;
+        }
+        if (fluent >= 2) {
+            String dom = dominantType(cn);
+            ci.kind = "builder";
+            ci.evidence = fluent + " fluent setters returning self" + (dom == null ? "" : ", fields " + dom);
+            ci.candidate = (dom == null ? "Fluent" : pascal(dom)) + "Builder";
+            return ci;
+        }
+
+        // Registry / singleton: holds a reference to its own type
+        boolean selfRef = cn.fields.stream().anyMatch(f -> f.desc.equals("L" + cn.name + ";"));
+        if (selfRef) {
+            boolean coll = cn.fields.stream().anyMatch(f -> f.desc.contains("Map") || f.desc.contains("List"));
+            String dom = dominantType(cn);
+            ci.kind = coll ? "registry" : "singleton";
+            ci.evidence = (coll ? "self reference + collection" : "self reference")
+                    + (dom == null ? "" : ", " + dom);
+            ci.candidate = (dom == null ? "Instance" : pascal(dom)) + (coll ? "Registry" : "Holder");
+            return ci;
+        }
+
+        // Pure data carrier: fields and nothing else
+        long realMethods = cn.methods.stream().filter(m -> !m.name.startsWith("<")).count();
+        if (realMethods == 0 && !cn.fields.isEmpty()) {
+            String dom = dominantType(cn);
+            ci.kind = "dto";
+            ci.evidence = cn.fields.size() + " fields" + (dom == null ? "" : ", " + dom);
+            ci.candidate = (dom == null ? "Value" : pascal(dom)) + "Data";
+            return ci;
+        }
+
         // Data holder: two or more Bukkit/NMS fields
         List<String> holderTypes = new ArrayList<>();
         for (FieldNode f : cn.fields) {
@@ -440,28 +504,13 @@ public class Deobf {
             return ci;
         }
 
-        // Dominant field type from readable code
-        Map<String, Integer> weights = new LinkedHashMap<>();
-        for (FieldNode f : cn.fields) {
-            if (f.desc.startsWith("L") && f.desc.endsWith(";")) {
-                String t = f.desc.substring(1, f.desc.length() - 1);
-                if (isReadableType(t)) weights.merge(t, 3, Integer::sum);
-            }
-        }
-        for (MethodNode m : cn.methods) {
-            for (Type t : Type.getArgumentTypes(m.desc)) {
-                if (t.getSort() == Type.OBJECT && isReadableType(t.getInternalName()))
-                    weights.merge(t.getInternalName(), 2, Integer::sum);
-            }
-            Type ret = Type.getReturnType(m.desc);
-            if (ret.getSort() == Type.OBJECT && isReadableType(ret.getInternalName()))
-                weights.merge(ret.getInternalName(), 2, Integer::sum);
-        }
-        if (!weights.isEmpty()) {
-            String best = weights.entrySet().stream().max(Map.Entry.comparingByValue()).get().getKey();
+        // Dominant type from readable code
+        String dominantIn = dominantTypeInternal(cn);
+        if (dominantIn != null && simple(dominantIn).length() >= 4) {
+            String s = pascal(simple(dominantIn));
             ci.kind = "type";
-            ci.evidence = "dominant type " + best;
-            ci.candidate = simple(best) + "Helper";
+            ci.evidence = "dominant type " + dominantIn;
+            ci.candidate = isBukkitType(dominantIn) ? s + "Bridge" : s + "Helper";
             return ci;
         }
 
@@ -479,11 +528,75 @@ public class Deobf {
         return ci;
     }
 
+    /** PacketType constant this adapter registers for: a GETSTATIC on a ProtocolLib PacketType subclass. */
+    static String packetTypeOf(ClassNode cn) {
+        for (MethodNode m : cn.methods) {
+            for (AbstractInsnNode insn : m.instructions) {
+                if (!(insn instanceof FieldInsnNode fi)) continue;
+                if (!fi.owner.startsWith("com/comphenix/protocol/PacketType")) continue;
+                if (fi.getOpcode() != Opcodes.GETSTATIC) continue;
+                if (fi.owner.indexOf('$') < 0) continue;
+                if (fi.name.equals("PLAY") || fi.name.equals("SERVER") || fi.name.equals("CLIENT")
+                        || fi.name.equals("STATUS") || fi.name.equals("LOGIN")) continue;
+                return fi.name;
+            }
+        }
+        return null;
+    }
+
     static boolean isReadableType(String t) {
         if (t.startsWith("dev/lone/itemsadder/") || t.startsWith("ia/sh/")
                 || t.startsWith("beer/devs/") || t.startsWith("net/md_5/")
                 || t.startsWith("io/papermc/") || t.startsWith("com/comphenix/")) {
             return simple(t).length() >= 4;
+        }
+        return false;
+    }
+
+    static boolean isBukkitType(String t) {
+        return (t.startsWith("org/bukkit/") || t.startsWith("net/minecraft/")
+                || t.startsWith("org/spigotmc/") || t.startsWith("com/destroystokyo/"))
+                && simple(t).length() >= 4;
+    }
+
+    /** Heaviest field/parameter/return type, preferring ItemsAdder and library types over Bukkit. */
+    static String dominantType(ClassNode cn) {
+        String in = dominantTypeInternal(cn);
+        if (in == null) return null;
+        String s = simple(in);
+        return s.length() >= 4 ? pascal(s) : null;
+    }
+
+    static String dominantTypeInternal(ClassNode cn) {
+        Map<String, Integer> w = new LinkedHashMap<>();
+        for (FieldNode f : cn.fields) {
+            if (!f.desc.startsWith("L") || !f.desc.endsWith(";")) continue;
+            String t = f.desc.substring(1, f.desc.length() - 1);
+            if (isReadableType(t)) w.merge(t, 3, Integer::sum);
+            else if (isBukkitType(t)) w.merge(t, 1, Integer::sum);
+        }
+        for (MethodNode m : cn.methods) {
+            for (Type t : Type.getArgumentTypes(m.desc)) weight(w, t, 2);
+            weight(w, Type.getReturnType(m.desc), 2);
+        }
+        if (w.isEmpty()) return null;
+        return w.entrySet().stream().max(Map.Entry.comparingByValue()).get().getKey();
+    }
+
+    static void weight(Map<String, Integer> w, Type t, int v) {
+        if (t.getSort() != Type.OBJECT) return;
+        String in = t.getInternalName();
+        if (isReadableType(in)) w.merge(in, v, Integer::sum);
+        else if (isBukkitType(in)) w.merge(in, 1, Integer::sum);
+    }
+
+    static boolean hasBukkitSignature(ClassNode cn) {
+        for (MethodNode m : cn.methods) {
+            for (Type t : Type.getArgumentTypes(m.desc)) {
+                if (t.getSort() == Type.OBJECT && isBukkitType(t.getInternalName())) return true;
+            }
+            Type r = Type.getReturnType(m.desc);
+            if (r.getSort() == Type.OBJECT && isBukkitType(r.getInternalName())) return true;
         }
         return false;
     }
@@ -648,13 +761,31 @@ public class Deobf {
             ci.kind = "impl";
             ci.evidence = "extends " + superBase;
         }
+        // Third chance: a class implementing one named interface is that interface's implementation.
+        for (ClassInfo ci : info.values()) {
+            if (!"fallback".equals(ci.kind)) continue;
+            if (ci.interfaces.size() != 1) continue;
+            ClassInfo itf = info.get(ci.interfaces.get(0));
+            if (itf == null || (itf.access & Opcodes.ACC_INTERFACE) == 0) continue;
+            String itfBase = byBase.get(itf.name);
+            if (itfBase == null || itfBase.startsWith("Class")) continue;
+            byBase.put(ci.name, itfBase.endsWith("Impl") ? itfBase : itfBase + "Impl");
+            ci.kind = "impl";
+            ci.evidence = "implements " + itfBase;
+        }
+        // Anything still nameless gets a role prefix instead of a bare number, so the name states the shape.
+        for (ClassInfo ci : info.values()) {
+            if (!"fallback".equals(ci.kind)) continue;
+            ci.candidate = "Opaque";
+            ci.evidence = "no anchor";
+        }
         Map<String, Integer> used = new HashMap<>();
         Map<String, String> out = new LinkedHashMap<>();
-        int fallback = 1;
+        int opaque = 1;
         for (Map.Entry<String, String> e : byBase.entrySet()) {
             ClassInfo ci = info.get(e.getKey());
             String base = e.getValue();
-            if ("fallback".equals(ci.kind)) base = "Class" + String.format("%04d", fallback++);
+            if ("fallback".equals(ci.kind)) base = "Opaque" + String.format("%03d", opaque++);
             String key = OBF_PKG + base;
             int n = used.merge(key, 1, Integer::sum);
             String finalName = OBF_PKG + base + (n == 1 ? "" : "_" + n);

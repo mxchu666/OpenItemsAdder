@@ -59,21 +59,26 @@ Two passes, in `tools/Deobf.java`.
 | Rule | Count | Evidence |
 |---|---|---|
 | `nms` | 314 | version switch in the NMS factory |
-| `literal` | 244 | the class's own message/config strings |
+| `type` | 313 | dominant type, library over Bukkit |
 | `switchmap` | 108 | `static int[]` indexed by `Enum.ordinal()` |
+| `literal` | 103 | the class's own message/config strings |
 | `listener` | 81 | `@EventHandler` parameter types |
-| `packet` | 73 | `extends PacketAdapter` |
-| `holder` | 66 | two or more Bukkit/NMS fields |
+| `packet` | 73 | `extends PacketAdapter` + `PacketType` constant |
+| `impl` | 67 | named superclass or the single named interface it implements |
+| `holder` | 62 | two or more Bukkit/NMS fields |
+| `builder` | 58 | one-argument methods returning `this` |
 | `record` | 53 | `extends java.lang.Record` |
 | `enum` | 49 | enum constants |
-| `type` | 38 | dominant library type |
+| `dto` | 45 | fields only, no methods |
+| `interface` | 45 | non-functional interface over a dominant type |
 | `decryptor` | 37 | `toString()` rebuilding shifted int constants |
-| `command` | 34 | `onCommand` + usage string |
+| `command` | 34 | `onCommand` + usage label |
 | `function` | 32 | single abstract method |
-| `impl` | 27 | superclass |
+| `singleton` | 27 | holds a reference to its own type |
+| `registry` | 14 | self reference plus a `Map`/`List` |
 | `exception` | 7 | exception superclass |
 | `task` | 1 | `Thread` / `Runnable` |
-| **unnamed** | **510** | no evidence — kept as `Class0001`… |
+| **no anchor** | **151** | `Opaque001` … `Opaque151` |
 
 The NMS layer is the interesting part. `itemsadder/m/aab` is a 24-way factory: for each wrapper interface it switches on Minecraft `Version` and calls `Class.forName` with the obfuscated class name as a string. `tools/hints.py` parses that switch, names each interface from its dominant Bukkit types, and gives every implementation a real identity:
 
@@ -85,12 +90,14 @@ abi -> BlockNms_26_2
 
 **4c. Remap.** ASM `ClassRemapper` rewrites class names, descriptors, signatures, annotations, stack-map types, method handles, **and the 311 string literals holding obfuscated class names**. Skipping the strings would leave the NMS layer pointing at classes that no longer exist.
 
+Every class, with one sentence on what it does, is catalogued in [`CLASSES.md`](CLASSES.md) — 21 sections, one row per class, generated from superclass, interfaces, types used, annotations and member counts.
+
 ### 5. Verification
 
 `tools/Verify.java` checks the output structurally:
 
 ```
-classes=1946 entries=2196 dupes=0
+classes=1946 entries=2195 dupes=0
 entryNameMismatch=0 missingOwnRefs=0 badLiterals=0
 ```
 
@@ -171,21 +178,28 @@ Dos pasadas, en `tools/Deobf.java`.
 | Regla | Cantidad | Evidencia |
 |---|---|---|
 | `nms` | 314 | switch de versión en la fábrica NMS |
-| `literal` | 244 | mensajes y claves de configuración de la propia clase |
+| `type` | 313 | tipo dominante, librería por encima de Bukkit |
 | `switchmap` | 108 | `static int[]` indexado por `Enum.ordinal()` |
+| `literal` | 103 | mensajes y claves de configuración de la propia clase |
 | `listener` | 81 | tipos de parámetro de `@EventHandler` |
-| `packet` | 73 | `extends PacketAdapter` |
-| `holder` | 66 | dos o más campos Bukkit/NMS |
+| `packet` | 73 | `extends PacketAdapter` + constante `PacketType` |
+| `impl` | 67 | superclase nombrada o la única interfaz nombrada que implementa |
+| `holder` | 62 | dos o más campos Bukkit/NMS |
+| `builder` | 58 | métodos de un argumento que devuelven `this` |
 | `record` | 53 | `extends java.lang.Record` |
 | `enum` | 49 | constantes del enum |
-| `type` | 38 | tipo dominante de la librería |
+| `dto` | 45 | sólo campos, sin métodos |
+| `interface` | 45 | interfaz no funcional sobre un tipo dominante |
 | `decryptor` | 37 | `toString()` que reconstruye enteros desplazados |
-| `command` | 34 | `onCommand` + cadena de uso |
+| `command` | 34 | `onCommand` + etiqueta de uso |
 | `function` | 32 | interfaz con un solo método abstracto |
-| `impl` | 27 | superclase |
+| `singleton` | 27 | guarda una referencia a su propio tipo |
+| `registry` | 14 | referencia a sí misma más un `Map`/`List` |
 | `exception` | 7 | superclase de excepción |
 | `task` | 1 | `Thread` / `Runnable` |
-| **sin nombre** | **510** | sin evidencia — quedan como `Class0001`… |
+| **sin ancla** | **151** | `Opaque001` … `Opaque151` |
+
+El catálogo clase por clase, con una frase sobre qué hace cada una, está en [`CLASSES.md`](CLASSES.md).
 
 La capa NMS es la parte interesante. `itemsadder/m/aab` es una fábrica de 24 ramas: para cada interfaz wrapper cambia según la `Version` de Minecraft y llama a `Class.forName` con el nombre ofuscado de la clase como cadena. `tools/hints.py` analiza ese switch, nombra cada interfaz según sus tipos Bukkit dominantes y da a cada implementación una identidad real:
 
@@ -202,7 +216,7 @@ abi -> BlockNms_26_2
 `tools/Verify.java` comprueba la salida estructuralmente:
 
 ```
-classes=1946 entries=2196 dupes=0
+classes=1946 entries=2195 dupes=0
 entryNameMismatch=0 missingOwnRefs=0 badLiterals=0
 ```
 

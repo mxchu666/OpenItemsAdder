@@ -8,7 +8,7 @@ This pass produces a complete mapping — every one of the 1,674 gets a name —
 
 1. **Fold XOR strings.** `itemsadder/m/bcx.b(int...)` is a `char ^ 7` decoder. 11 call sites carry constant `int[]` literals; each is evaluated at build time and replaced with an `LDC`. No encrypted strings remain in the factory.
 2. **Name from evidence**, in priority order.
-3. **Apply** with ASM `ClassRemapper`. Class names, descriptors, signatures, annotations, `StackMapTable` types, method handles, and the string literals holding obfuscated class names (used by `Class.forName` in the NMS factory) are all remapped.
+3. **Apply** with ASM `ClassRemapper`. Class names, descriptors, signatures, annotations, `StackMapTable` types, method handles, and string literals of the form `itemsadder.m.X` (used by `Class.forName` in the NMS factory) are all remapped.
 4. **Verify** each output class: entry name matches internal name, every `itemsadder/` reference resolves, every reflected name resolves, no duplicate entries, bytecode verifier parity with the original.
 
 ## Naming rules and counts
@@ -41,12 +41,12 @@ tx   -> EntityDeathListener        (@EventHandler EntityDeathEvent)
 vm   -> PrepareItemCraftListener   (@EventHandler PrepareItemCraftEvent)
 bcf  -> Consumer_2                 (functional interface)
 bx   -> EntityTypeSwitchMap        (static int[] over EntityType.ordinal())
-da   -> IainternalPlayer           (own config key literal)
+da   -> IainternalPlayer           (literal "iainternal:player")
 ```
 
 ## NMS layer
 
-`itemsadder/m/aab` is a 24-way factory: for each wrapper interface (`aai`, `abl`, …) it switches on `Version` and calls `Class.forName` with the obfuscated class name as a string. `tools/hints.py` parses that switch to give each target its real identity:
+`itemsadder/m/aab` is a 24-way factory: for each wrapper interface (`aai`, `abl`, …) it switches on `Version` and calls `Class.forName("itemsadder.m.X")`. `tools/hints.py` parses that switch to give each target its real identity:
 
 ```
 aai  -> BlockNms
@@ -82,8 +82,6 @@ entryNameMismatch=0 missingOwnRefs=0 badLiterals=0
 | `Deobf.java` | the mapper |
 | `hints.py` | NMS factory parser |
 | `Verify.java` | structural validator |
-
-These are local outputs; only the tooling is versioned.
 
 ## Reproduce
 

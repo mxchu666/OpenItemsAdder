@@ -1,51 +1,62 @@
-# Deobfuscation stats — ItemsAdder 4.0.18
+# Estadísticas de desofuscación — ItemsAdder 4.0.18
 
-Input: 1,946 classes, 1,674 of them in `itemsadder/m/` (obfuscated).
-Output: 1,674 mapped names, 1,946 decompiled classes.
+Entrada: 1.946 clases, 1674 de ellas en `itemsadder/m/` (ofuscadas).
+Salida: 1674 nombres asignados, 1.946 clases descompiladas.
 
-## Rule distribution
+## Distribución de reglas
 
-| Kind | Count | Evidence |
+| Tipo | Cantidad | Evidencia |
 |---|---|---|
-| fallback | 510 | none — `Class0001` … `Class0510` |
-| nms | 314 | NMS factory version switch |
-| literal | 244 | own message/config strings |
-| switchmap | 108 | `static int[]` over `Enum.ordinal()` |
-| listener | 81 | `@EventHandler` parameter types |
+| nms | 314 | switch de versión de la fábrica NMS |
+| type | 313 | tipo dominante (librería o Bukkit) |
+| fallback | 151 | ninguna — `OpaqueNNN` |
+| switchmap | 108 | `static int[]` sobre `Enum.ordinal()` |
+| literal | 103 | mensajes y claves de configuración propios |
+| listener | 81 | tipos de parámetro de `@EventHandler` |
 | packet | 73 | `extends PacketAdapter` |
-| holder | 66 | two or more Bukkit/NMS fields |
+| impl | 67 | superclase o interfaz ya nombrada |
+| holder | 62 | dos o más campos Bukkit/NMS |
+| builder | 58 | varios setters que devuelven `this` |
 | record | 53 | `extends java.lang.Record` |
-| enum | 49 | enum constants |
-| type | 38 | dominant library type |
-| decryptor | 37 | `toString()` rebuilding shifted int constants |
-| command | 34 | `onCommand` + usage string |
-| function | 32 | single abstract method |
-| impl | 27 | superclass |
-| exception | 7 | exception superclass |
+| enum | 49 | constantes del enum |
+| dto | 45 | sólo campos, sin métodos |
+| interface | 45 | interfaz no funcional: contrato de N métodos |
+| decryptor | 37 | `toString()` que reconstruye enteros desplazados |
+| command | 34 | `onCommand` + etiqueta de uso |
+| function | 32 | interfaz con un solo método abstracto |
+| singleton | 27 | referencia a sí misma (instancia única) |
+| registry | 14 | referencia a sí misma + colección |
+| exception | 7 | superclase de excepción |
 | task | 1 | `Thread` / `Runnable` |
 
-Named from evidence: 1,164 / 1,674 (69.5%).
+Con nombre respaldado por evidencia: 1523 / 1674 (91.0 %).
+Sin ancla: 151 (`Opaque001` … `Opaque151`).
 
-## String folding
+## Plegado de cadenas
 
-11 call sites to `itemsadder/m/bcx.b(int...)`, all with constant `int[]` arguments.
-11 inlined, 0 encrypted literals left.
+11 llamadas a `itemsadder/m/bcx.b(int...)`, todas con argumentos `int[]` constantes.
+11 plegadas, 0 literales cifrados restantes.
 
-## Verification
+## Verificación
 
 ```
-classes=1946  entries=2196  dupes=0
+classes=1946  entries=2195  dupes=0
 entryNameMismatch=0
 missingOwnRefs=0
 badLiterals=0
 bytecodeIssues=1081
 ```
 
-`bytecodeIssues` is the same count on the untouched input: ASM's `CheckClassAdapter` cannot resolve Bukkit/NMS parents without a server classpath and throws on `INVOKEINTERFACE`. Baseline, not remap damage.
+`bytecodeIssues` es el mismo número en la entrada sin tocar: ASM no puede resolver las
+superclases de Bukkit/NMS sin el classpath del servidor y falla en `INVOKEINTERFACE`.
+Es ruido de base, no daño del remapeo.
 
-## Known limits
+## Límites
 
-- Names are inferred, not recovered.
-- 510 classes have no anchor: anonymous tuples, lambdas, field bags.
-- Only classes were renamed; methods and fields keep their obfuscated names except where they override library methods.
-- Static analysis only; nothing was executed.
+- Los nombres son inferidos, no recuperados.
+- Las clases `Opaque` no tienen ancla: tuplas anónimas, lambdas y bolsas de campos.
+- Sólo se renombraron clases; métodos y campos conservan el nombre ofuscado salvo
+  donde sobrescriben métodos de librería.
+- Análisis estático; no se ejecutó nada.
+
+El catálogo clase por clase, con qué hace cada una, está en [`../../CLASSES.md`](../../CLASSES.md).
